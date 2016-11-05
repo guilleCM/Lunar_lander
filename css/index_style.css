@@ -1,0 +1,11 @@
+body {background-image:url(../img/fondo.png);}
+
+#luna {
+	position: fixed;bottom: -4px; left: 35%;
+}
+#mundo {
+	position: fixed;bottom: -4px; left: 0%;
+}
+#sol {
+	position: fixed;right: 0px;
+}
