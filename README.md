@@ -18,7 +18,5 @@ Tengo que desarrollar el proyecto de Mariano, y como cliente me ha proporcionado
 - [x] La imagen que muestra cómo el cliente quiere que se vea el juego es inviable para el desarrollo del html. Me veo obligado a recortar y separar la imagen para poder utilizar los elementos correctamente.
  * Recortar un trozo del fondo de la imagen que me dieron para utilizarla como background con la función de repetir para llenar el fondo de una manera más óptima y que escale adecuadamente con todos los tamaños de dispositivo. La he redimensionado a 255x255 píxeles y le he reducido la paleta de colores para bajar el peso a 1,4 kB.
  * Recortar los elementos decorativos (mundo y sol) para que se puedan adaptar a la pantalla y para poder tratarlos individualmente como <divs>. La imagen del sol la he reducido a 1,6 kB y la del mundo a 13,2 kB
- * No disponía de una imagen de la luna aislada, sino que venía acoplada con el resto del fondo. Me dieron libertad para cambiarla y así lo hice porque me parecía que la que propuesta no encajaba estéticamente con el resto de elementos.  
->Es opcional utilizar esa luna o crear una alternativa.
-Así que dibujé una luna que ocupa 17,9 kB, que mantiene la esencia de lo que el cliente quería y que va más acorde con la temática.
+ * No disponía de una imagen de la luna aislada, sino que venía acoplada con el resto del fondo. Me dieron libertad para cambiarla y así lo hice porque me parecía que la que propuesta no encajaba estéticamente con el resto de elementos. Así que dibujé una luna que ocupa 17,9 kB, que mantiene la esencia de lo que el cliente quería y que va más acorde con la temática.
 
