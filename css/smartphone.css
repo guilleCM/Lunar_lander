@@ -62,6 +62,18 @@
 	margin: 2px;
 	font-size: 80%;
 }
+#pulsador {
+	display: inline-block;
+	float: left;
+	margin:2px;
+	width: 60px;
+	height: 60px;
+	background-image: url("../img/propulsor.png");
+	background-color: #00FA9A;
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: 50% 50%;
+}
 .centro{
 	display:inline-block; width: 60%; height: 100%;
 	position: fixed; bottom: 0px; left:20%;
