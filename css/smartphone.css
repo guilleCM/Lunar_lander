@@ -88,8 +88,8 @@
 	position: absolute; top: 0px; left: 30%; right: 30%;
 }
 .nave {
-	width: 40%;
-	height: 20%;
+	max-width: 40%;
+	height: auto;
 	position: absolute; left: 30%;
 }
 img {

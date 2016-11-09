@@ -69,9 +69,10 @@
 	position: absolute; top: 0px; left: 40%; right: 40%;
 }
 .nave {
-	width: 30%;
-	height: 15%;
-	position: absolute; left: 35%;
+	max-width: 30%;
+	height: auto;
+	position: absolute;
+	left: 35%;
 }
 .manualInstrucciones {
 	background-color: #00FA9A;
