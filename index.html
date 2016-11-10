@@ -6,29 +6,27 @@
 		<meta name = "description" content = "Minijuego basado en Lunar Lander">
 		<link rel="stylesheet" type="text/css" href="css/responsive.css" />
 </head>
-	<body style="background-image:url(img/fondo.png)">
-	<div class="derecha">
-		<div class="opcionesJuego">
-			<div id="pausa">Pausa</div>
-			<div id="reinicia">Reinicia</div>
-			<div id="instrucciones">Instrucciones</div>
-		</div>
-	</div>
+<body>
 	<div class="izquierda">
-		<div class="panelNave">
 			<div class="controlesNave">Fuel: 100%</div>
 			<div class="controlesNave">Velocidad: 3000km/h</div>
 			<div class="controlesNave">Altitud: 1000m</div>
-			<div id="pulsador"></div>
-		</div>
+			<button id="pulsador"></button>
 	</div>
+
 	<div class="centro">
 		<div class="zonaJuego">
-			<img class="nave" src="img/nave.png" alt="nave">
+			<img class="nave" src="img/nave_on.png" alt="nave">
 		</div>
 		<div class="zonaAterrizaje">
 			<img src="img/luna.png" alt="luna">
 		</div>
+	</div>
+
+	<div class="derecha">
+			<div id="pausa">Pausa</div>
+			<div id="reinicia">Reinicia</div>
+			<div id="instrucciones">Instrucciones</div>
 	</div>
 </body>
 </html> 
