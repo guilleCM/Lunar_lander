@@ -7,7 +7,7 @@ img {
 }
 
 #controles {
-	background-color: #F0E68C;
+	background-image: url("../img/fondo_instrucciones.jpg");
 	border-style: solid; border-width: 2px;
 	display:inline-block; width: auto; height: auto;
 	position:inherit;
