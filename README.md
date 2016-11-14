@@ -20,8 +20,11 @@ Tengo que desarrollar el proyecto de Mariano, y como cliente me ha proporcionado
 ![nave_explosionada](https://github.com/guilleCM/Lunar_lander/blob/master/img/nave_rota.png)  
 - [x] Diseñar los iconos del panel de configuracion del juego (pausa, reinicia, instrucciones). En total pesan 838 bytes. Además he creado un botón adicional para propulsar la nave que es necesario para la versión smartphone del juego. Su peso es de 312 bytes.
 - [x] La imagen que muestra cómo el cliente quiere que se vea el juego es inviable para el desarrollo del html. Me veo obligado a recortar y separar la imagen para poder utilizar los elementos correctamente.
- * Recortar un trozo del fondo de la imagen que me dieron para utilizarla como background con la función de repetir para llenar el fondo de una manera más óptima y que escale adecuadamente con todos los tamaños de dispositivo. La he redimensionado a 255x255 píxeles y le he reducido la paleta de colores para bajar el peso a 1,4 kB.
- * Recortar los elementos decorativos (mundo y sol) para que se puedan adaptar a la pantalla y para poder tratarlos individualmente como <divs>. La imagen del sol la he reducido a 1,6 kB y la del mundo a 13,2 kB
+ * Recortar un trozo del fondo de la imagen que me dieron para utilizarla como background con la función de repetir para llenar el fondo de una manera más óptima y que escale adecuadamente con todos los tamaños de dispositivo. La he redimensionado a 255x255 píxeles y le he reducido la paleta de colores para bajar el peso a 1,4 kB.  
+ ![Imagen background](https://github.com/guilleCM/Lunar_lander/blob/master/img/fondo.png) 
+ * Recortar los elementos decorativos (mundo y sol) para que se puedan adaptar a la pantalla y para poder tratarlos individualmente como <divs>. La imagen del sol la he reducido a 1,6 kB y la del mundo a 13,2 kB.  
+ ![Imagen mundo](https://github.com/guilleCM/Lunar_lander/blob/master/img/mundo.png)
+ ![Imagen sol](https://github.com/guilleCM/Lunar_lander/blob/master/img/sol.png)
  * No disponía de una imagen de la luna aislada, sino que venía acoplada con el resto del fondo. Me dieron libertad para cambiarla y así lo hice porque me parecía que la que propuesta no encajaba estéticamente con el resto de elementos. Así que diseñé una luna que ocupa 9,4 kB, que mantiene la esencia de lo que el cliente quería y que va más acorde con la temática.  
 ![Imagen luna](https://github.com/guilleCM/Lunar_lander/blob/master/img/luna.png) 
 - [x] Añadida una imágen para usarla como fondo en la web de las instrucciones, su peso es 9,3 kB.
