@@ -54,6 +54,7 @@ body {
 	position: relative; top: 5%;
 	width: 40%;
 	max-width: 49px;
+	max-height: 20%;
 	height: auto;
 	display: inline-block;
 }

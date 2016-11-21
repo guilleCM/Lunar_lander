@@ -41,6 +41,7 @@ img {
 .nave {
 	max-width: 30%;
 	height: auto;
+	max-height: 20%;
 	position: absolute;
 	left: 35%;
 	top: 5%;
