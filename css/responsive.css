@@ -39,10 +39,12 @@ body {
 .nave {
 	width: 30%;
 	max-height: 20%;
-	position: absolute;
-	left: 35%;
-	margin-top: 5%;
-	
+	position: relative;
+	margin-top: 5%;	
+}
+.motor {
+	width: 30%;
+	height: auto;
 }
 
 .zonaAterrizaje {
