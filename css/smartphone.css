@@ -58,6 +58,7 @@ body {
 .motor {
 	width: 40%;
 	height: auto;
+	margin-top: -2px;
 }
 .zonaAterrizaje {
 	display:inline-block; width: 100%; height: 20%;
