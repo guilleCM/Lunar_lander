@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Lunar Lander</title>
 		<meta name = "description" content = "Minijuego basado en Lunar Lander">
-		<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+		<link rel="stylesheet" type="text/css" href="css/smartphone.css" />
 </head>
 <body>
 	<div class="izquierda">
@@ -25,9 +25,22 @@
 	</div>
 
 	<div class="derecha">
-			<div id="pausa">Pausa</div>
-			<div id="reinicia">Reinicia</div>
-			<a href="instrucciones.html"><div id="instrucciones">Instrucciones</div></a>
+			<div id="pausa"></div>
+			<div id="reinicia"></div>
+			<a href="#" onclick="mostrarInstrucciones();"><div id="instrucciones"></div></a>
 	</div>
+	
+	<div id="menuInstrucciones">
+		<a href="#" onclick="ocultarInstrucciones();"><img id="close" src="img/close.png" alt="close"></a>
+		<h3>INSTRUCCIONES</h3>
+		<p>El videojuego consiste en frenar la caída vertical de la nave, mediante el uso del motor, (utiliza la tecla espacio o el boton ON para la version smartphone) para que esta pueda aterrizar adecuadamente sobre la superficie lunar.<br><br>Si el jugador no frena lo suficientemente la caída de la nave, está colisionará contra el suelo, de modo que esta se estrellará y el jugador no superará el juego.<br><br> Además hay que tener en cuenta que la nave cuenta con un medidor de gasolina que se acabará si el jugador abusa del uso del motor de la nave.</p>
+		<h3><a href="acerca.html">Acerca de...</a></h3>
+	</div>
+	<script> function mostrarInstrucciones() {
+		document.getElementById("menuInstrucciones").style.display="block";}
+    </script>
+    <script> function ocultarInstrucciones() {
+    	document.getElementById("menuInstrucciones").style.display="none";}
+    </script>
 </body>
 </html> 
