@@ -8,3 +8,10 @@ body {
 	border-style: ridge;
 	padding: 5%;
 }
+button {
+	background-color: #00FA9A;
+	font-family: Arial;
+}
+#volver {
+	text-align: center;
+}
