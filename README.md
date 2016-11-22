@@ -14,7 +14,7 @@ Tengo que desarrollar el proyecto de Mariano, y como cliente me ha proporcionado
 - [x] Redimensionar imágenes: Las imágenes de la nave y del motor de la nave tenían demasiado espacio transparente sin uso. Por ello he redimensionado el lienzo de:
  * La imagen de la nave de 800x500 a  49x85 píxeles (reduciendo su peso de 2,3 kB a 1,4 kB).
  * La imagen del motor de la nave de 800x500 a 30x45 píxeles (reduciendo su peso de 985 bytes a 430 bytes)
-- [x] Crear imagen .gif del motor encendido para que de la sensación de que el fuego se enciende. Ocupa 884 bytes.
+- [x] Crear imagen .gif del motor encendido para que de la sensación de que el fuego se enciende. Ocupa 884 bytes.  
 ![motor_on](https://github.com/guilleCM/Lunar_lander/blob/master/img/motor.gif)  
 - [x] Diseñar y crear por mi cuenta una imagen en formato .gif de la nave en estado de explosion (es decir, cuando choca precipitadamente contra la superficie). La imagen resultante pesa 15,3 kB.  
 ![nave_explosionada](https://github.com/guilleCM/Lunar_lander/blob/master/img/nave_rota.gif)  
