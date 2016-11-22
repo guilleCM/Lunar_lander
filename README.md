@@ -12,11 +12,11 @@ Tengo que desarrollar el proyecto de Mariano, y como cliente me ha proporcionado
 
 ##Tareas realizadas a parte:
 - [x] Redimensionar imágenes: Las imágenes de la nave y del motor de la nave tenían demasiado espacio transparente sin uso. Por ello he redimensionado el lienzo de:
- * La imagen de la nave de 800x500 a  49x88 píxeles (reduciendo su peso de 2,3 kB a 1,3 kB).
+ * La imagen de la nave de 800x500 a  49x131 píxeles (reduciendo su peso de 2,3 kB a 1,4 kB).
  * La imagen del motor de la nave de 800x500 a 30x45 píxeles (reduciendo su peso de 985 bytes a 430 bytes)
 - [x] Crear la imagen conjunta de la nave con el motor, ya que me las han dado por separado y necesito una imagen de la nave con el motor junto para diseñar el juego. Ocupa 1,7 kB.  
 ![nave_on](https://github.com/guilleCM/Lunar_lander/blob/master/img/nave_on.png)  
-- [x] Diseñar y crear por mi cuenta la imagen de la nave en estado de explosion (es decir, cuando choca precipitadamente contra la superficie). La imagen resultante pesa 6,2 kB.  
+- [x] Diseñar y crear por mi cuenta la imagen de la nave en estado de explosion (es decir, cuando choca precipitadamente contra la superficie). La imagen resultante pesa 6,3 kB.  
 ![nave_explosionada](https://github.com/guilleCM/Lunar_lander/blob/master/img/nave_rota.png)  
 - [x] Diseñar los iconos del panel de configuracion del juego (pausa, reinicia, instrucciones). En total pesan 838 bytes. Además he creado un botón adicional para propulsar la nave que es necesario para la versión smartphone del juego. Su peso es de 312 bytes.
 - [x] La imagen que muestra cómo el cliente quiere que se vea el juego es inviable para el desarrollo del html. Me veo obligado a recortar y separar la imagen para poder utilizar los elementos correctamente.
