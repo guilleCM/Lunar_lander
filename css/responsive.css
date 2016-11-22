@@ -59,6 +59,10 @@ body {
 	position: absolute;
 	display: none;
 }
+#menuInstrucciones b {
+	background-color: #00FA9A;
+	border-style: outset;
+}
 #close{
 	background-color:#00FA9A;
 	border-style: solid;
