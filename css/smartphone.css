@@ -1,9 +1,6 @@
-img {
-	width: 100%;
-	height: 100%;
-}
 body {
 	background-image: url("../img/fondo.png");
+	font-family: Arial;
 }
 
 
@@ -46,12 +43,12 @@ body {
 
 }
 .zonaJuego {
-	display: inline-block; width: 40%; height: 80%;
+	display: inline-block; width: 40%; height: 100%;
 	position: absolute; top: 0px; left: 30%; right: 30%;
 	text-align: center;
 }
 .nave {
-	position: relative; top: 5%;
+	margin-top: 5%;
 	width: 40%;
 	max-width: 49px;
 	max-height: 20%;
@@ -62,7 +59,10 @@ body {
 	display:inline-block; width: 100%; height: 20%;
 	position: absolute; bottom: 0px;
 }
-
+#luna {
+	width: 100%;
+	height: 100%;
+}
 
 .derecha{
 	display:inline-block; width: 20%; height: 100%;

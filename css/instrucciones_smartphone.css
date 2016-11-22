@@ -1,5 +1,6 @@
 body {
 	background-image: url("../img/fondo.png");
+	font-family: Arial;
 }
 img {
 	width: 100%;
@@ -17,6 +18,7 @@ img {
 	width: auto;
 	height: auto;
 	position: absolute;
+	text-align: middle;
 }
 #propulsor {
 	border-style: solid;
