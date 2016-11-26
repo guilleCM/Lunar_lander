@@ -22,7 +22,7 @@ Tengo que desarrollar el proyecto de Mariano, y como cliente me ha proporcionado
 - [x] La imagen que muestra cómo el cliente quiere que se vea el juego es inviable para el desarrollo del html. Me veo obligado a recortar y separar la imagen para poder utilizar los elementos correctamente.
  * Recortar un trozo del fondo de la imagen que me dieron para utilizarla como background con la función de repetir para llenar el fondo de una manera más óptima y que escale adecuadamente con todos los tamaños de dispositivo. La he redimensionado a 255x255 píxeles y le he reducido la paleta de colores para bajar el peso a 1,4 kB.  
  ![Imagen background](https://github.com/guilleCM/Lunar_lander/blob/master/img/fondo.png) 
- * Recortar los elementos decorativos (mundo y sol) para que se puedan adaptar a la pantalla y para poder tratarlos individualmente como *divs*. La imagen del sol la he reducido a 1,6 kB y la del mundo a 13,2 kB.  
+ * Recortar los elementos decorativos (mundo y sol) para que se puedan adaptar a la pantalla y para poder tratarlos individualmente como *divs* en el *html*. La imagen del sol la he reducido a 1,6 kB y la del mundo a 13,2 kB.  
  ![Imagen mundo](https://github.com/guilleCM/Lunar_lander/blob/master/img/mundo.png)
  ![Imagen sol](https://github.com/guilleCM/Lunar_lander/blob/master/img/sol.png)
  * No disponía de una imagen de la luna aislada, sino que venía acoplada con el resto del fondo. Me dieron libertad para cambiarla y así lo hice porque me parecía que la que propuesta no encajaba estéticamente con el resto de elementos. Así que diseñé una luna que ocupa 9,4 kB, que mantiene la esencia de lo que el cliente quería y que va más acorde con la temática.  
@@ -30,12 +30,13 @@ Tengo que desarrollar el proyecto de Mariano, y como cliente me ha proporcionado
 - [x] Añadida una imágen para usarla como fondo del div que mostrará de las instrucciones, su peso es 9,3 kB.  
  ![Imagen background](https://github.com/guilleCM/Lunar_lander/blob/master/img/fondo_instrucciones.jpg) 
 - [x] Añadida una imágen para usarla como fondo del html "Acerca de" que mostrará de información adicional sobre el juego. Su peso es 8,7 kB.  
- ![Imagen background](https://github.com/guilleCM/Lunar_lander/blob/master/img/papel.jpg) 
+ ![Imagen background instrucciones](https://github.com/guilleCM/Lunar_lander/blob/master/img/papel.jpg) 
 - [x] En total, el conjunto de imágenes que darán vida al juego ocupa **62,8 kB**. 
 - [x] El esquema de desarrollo del html que he seguido, para ser lo más fiel posible a la imagen de lo que el cliente me pedía, es el siguiente: (este esquema es para la versión responsive)  
 ![Imagen esquema](https://raw.githubusercontent.com/guilleCM/Lunar_lander/master/img/esquema_2.jpg)   
 - [x] Versión optimizada para smarpthone; He creado otro css que modifica los botones para que sean más vistosos en una pantalla pequeña (resolucionados a 70x70 píxeles) y que se pueda interaccionar mejor con ellos.
-- [x] Creado *html* para las instrucciones del juego, con descripción de los controles del juego y de la finalidad del mismo.
+- [x] Creado *div* para las instrucciones del juego, con descripción de los controles del juego y de la finalidad del mismo. Este div estará oculto hasta que se apriete el botón de Instrucciones.
+- [x] Creado *html* con información adicional sobre el proyecto. Es decir, un *about* (acerca de), donde se explican los recursos utilizados.
 
 ###RESULTADOS
 - [ ] Esto es lo que el cliente pedía:  
