@@ -14,7 +14,6 @@ window.onload = function(){
 		document.getElementsByClassName("c")[0].style.display = "none";
 		start();
 	}
-
 //Empezar a mover nave
 	start();
 }
@@ -38,6 +37,42 @@ function moverNave(){
 		document.getElementById("nave").style.top = y+"%"; 
 	} else { 
 		stop();
+		finalizarJuego();
 	}
 }
 
+function finalizarJuego() {
+	if (v>10) {
+		document.getElementById("imgNave").src="img/nave_rota.gif";
+		document.getElementById("gameOver").style.display="block";
+	}
+}
+
+function encenderMotor() {
+	document.getElementById("imgMotor").style.display="block";
+}
+
+function mostrarInstrucciones() {
+	pausar();
+	document.getElementById("menuInstrucciones").style.display="block";
+}
+
+function ocultarInstrucciones() {
+	reanudar();
+    document.getElementById("menuInstrucciones").style.display="none";
+}
+
+function reanudar() {
+	start();
+	document.getElementById("reanudar").style.display="none";
+	document.getElementById("pausa").style.display="inline-block";
+}
+function pausar() {
+	stop();
+	document.getElementById("pausa").style.display="none";
+	document.getElementById("reanudar").style.display="inline-block";
+}
+
+function reiniciarJuego() {
+	window.location.reload();
+}

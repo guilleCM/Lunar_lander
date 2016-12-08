@@ -1,0 +1,17 @@
+body {
+	background-image: url("../img/fondo.png");
+	font-family: Arial;
+}
+
+#contenedor {
+	background-image: url("../img/papel.jpg");
+	border-style: ridge;
+	padding: 5%;
+}
+button {
+	background-color: #00FA9A;
+	font-family: Arial;
+}
+#volver {
+	text-align: center;
+}

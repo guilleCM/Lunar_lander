@@ -12,6 +12,7 @@ body,html{
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: left bottom;
+	pointer-events: none;
 }
 .controlesNave{
 	width: auto; height: auto; max-width: 180px;
@@ -32,9 +33,27 @@ body,html{
 	background-position: right; 
 	background-size: 30%;
 	display:block !important;
+	pointer-events: auto;
 }
 .derecha{display:inline-block;width:35%;height:100%;
 	position: fixed; right: 0px;
+}
+#reanudar {
+	border-style: solid;
+	border-color: #2E8B57;
+	display: none;
+	float: right;
+	background-color: #00FA9A;
+	margin: 10px;
+	margin-top: 5%;
+	color: #00FA9A;
+	font-size: 0%;
+	width: 70px;
+	height: 70px;
+	background-image: url("../img/play.png");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: 50% 50%;
 }
 #pausa {
 	border-style: solid;
@@ -85,6 +104,28 @@ body,html{
 	background-size: 50%;
 	background-position: 50% 50%;
 }
+#menuInstrucciones {
+	margin: 5%;
+	background-image: url("../img/fondo_instrucciones.jpg");
+	text-align: center;
+	border-style: outset;
+	position: absolute;
+	display: none;
+}
+#menuInstrucciones b {
+	background-color: #00FA9A;
+	border-style: outset;
+}
+#close {
+	background-color:#00FA9A;
+	border-style: solid;
+	border-color: #2E8B57;
+	width: 5%;
+	max-width: 50px;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+}
 
 .zonaAterrizaje{
 	height:15%;
@@ -114,9 +155,18 @@ body,html{
 }
 #imgMotor{
 	height: 40%;
-	display: block;
+	display: none;
 	margin: auto;
 }
+#gameOver{
+	margin: 5%;
+	background-image: url("../img/fondo_instrucciones.jpg");
+	text-align: center;
+	border-style: outset;
+	position: absolute;
+	display: none;
+}
+
 
 #cpanel{}
 #hidem,#showm{display:none}
