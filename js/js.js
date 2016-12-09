@@ -1,7 +1,7 @@
 var y = 5; // altura inicial y0=10%, debe leerse al iniciar si queremos que tenga alturas diferentes dependiendo del dispositivo
 var v = 0;
 var g = 1.622;
-var a = g;
+var a = g; //a= -g es para motor encendido
 var dt = 0.016683;
 var timer;
 var intentos = 1;
@@ -49,6 +49,7 @@ function finalizarJuego() {
 }
 
 function encenderMotor() {
+	a=-g
 	document.getElementById("imgMotor").style.display="block";
 }
 
@@ -74,6 +75,9 @@ function pausar() {
 }
 
 function reiniciarJuego() {
+	stop();
+	document.getElementById("reanudar").style.display="none";
+	document.getElementById("pausa").style.display="inline-block";
 	intentos++;
 	y = 5; // altura inicial y0=10%, debe leerse al iniciar si queremos que tenga alturas diferentes dependiendo del dispositivo
 	v = 0;
@@ -85,4 +89,5 @@ function reiniciarJuego() {
 	document.getElementById("intentos").innerHTML=intentos;
 	document.getElementById("imgNave").src="img/nave.png";
 	document.getElementById("gameOver").style.display="none";
+
 }

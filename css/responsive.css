@@ -12,7 +12,7 @@ body,html{
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: left bottom;
-	pointer-events: none;
+	/*	pointer-events: none;*/
 }
 .controlesNave{
 	width: auto; height: auto; max-width: 180px;
@@ -168,6 +168,18 @@ body,html{
 	left: 10%;
 	top: 10%;
 }
+
+#userWin{
+	background-image: url("../img/fondo_instrucciones.jpg");
+	text-align: center;
+	border-style: outset;
+	position: absolute;
+	display: none;
+	width: 80%;
+	left: 10%;
+	top: 10%;
+}
+
 #intentos {
 }
 button {

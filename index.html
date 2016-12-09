@@ -20,6 +20,7 @@
 			<div class="controlesNave">Velocidad:<br><span id="velocidad">100</span> m/s</div>
 			<div class="controlesNave">Fuel:<br><span id="fuel">100</span> %</div>
 			<div class="controlesNave">Altura:<br><span id="altura">60</span> m</div>
+			<button id="ON" onclick="encenderMotor();">ON</button>
 		</div>
 </div>
 
@@ -43,6 +44,13 @@
 	La velocidad de la nave no debe superar los 10 metros/segundo<br><br>
 	<button onclick="reiniciarJuego();">Probar otra vez</button><br><br>
 	Intentos realizados: <b><span id="intentos">0</span></b><br><br>
+</div>
+
+<div id="userWin">
+	<h2>¡¡¡ENHORABUENA!!!</h2>
+	La NASA estaría orgullosa de contar con pilotos como tú...<br><br>
+	<img src="img/Enhorabuena.gif"><br>
+	<button onclick="reiniciarJuego();">Jugar otra vez</button><br><br>
 </div>
 
 <div id="menuInstrucciones">
