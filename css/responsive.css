@@ -38,6 +38,13 @@ body,html{
 .derecha{display:inline-block;width:35%;height:100%;
 	position: fixed; right: 0px;
 }
+
+#reanudar:hover {background-color: #2E8B57;}
+#pausa:hover {background-color: #2E8B57;}
+#reinicia:hover {background-color: #2E8B57;}
+#instrucciones:hover {background-color: #2E8B57;}
+#close:hover {background-color: #2E8B57;}
+
 #reanudar {
 	border-style: solid;
 	border-color: #2E8B57;
