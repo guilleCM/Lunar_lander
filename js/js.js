@@ -4,6 +4,7 @@ var g = 1.622;
 var a = g; //a= -g es para motor encendido
 var dt = 0.016683;
 var timer;
+var gasolina=100;
 var intentos = 1;
 window.onload = function(){
     document.getElementById("showm").onclick = function () {
@@ -14,6 +15,7 @@ window.onload = function(){
 		document.getElementsByClassName("c")[0].style.display = "none";
 		start();
 	}
+
 	document.onkeydown=encenderMotor;
 	document.onkeyup=apagarMotor;
 //Empezar a mover nave
@@ -48,12 +50,21 @@ function finalizarJuego() {
 		document.getElementById("imgNave").src="img/nave_rota.gif";
 		document.getElementById("gameOver").style.display="block";
 		document.getElementById("intentos").innerHTML=intentos;
+	} else {
+		document.getElementById("userWin").style.display="block";	
 	}
 }
 
 function encenderMotor() {
-	a=-g
+	a=-g;
+	gasolina--;
+	document.getElementById("fuel").innerHTML=gasolina;
 	document.getElementById("imgMotor").style.display="block";
+	if (gasolina<=0) {
+			apagarMotor();
+			document.getElementById("fuel").innerHTML=0;
+
+		}
 }
 function apagarMotor() {
 	a=g
@@ -91,10 +102,14 @@ function reiniciarJuego() {
 	g = 1.622;
 	a = g;
 	dt = 0.016683;
+	gasolina=100;
 	clearInterval(timer);
 	start();
 	document.getElementById("intentos").innerHTML=intentos;
 	document.getElementById("imgNave").src="img/nave.png";
 	document.getElementById("gameOver").style.display="none";
-
+	document.getElementById("userWin").style.display="none";
+	document.getElementById("fuel").innerHTML=gasolina;
 }
+
+
