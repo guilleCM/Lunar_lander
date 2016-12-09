@@ -159,14 +159,21 @@ body,html{
 	margin: auto;
 }
 #gameOver{
-	margin: 5%;
 	background-image: url("../img/fondo_instrucciones.jpg");
 	text-align: center;
 	border-style: outset;
 	position: absolute;
 	display: none;
+	width: 80%;
+	left: 10%;
+	top: 10%;
 }
-
+#intentos {
+}
+button {
+	background-color: #00FA9A;
+	font-family: Arial;
+}
 
 #cpanel{}
 #hidem,#showm{display:none}

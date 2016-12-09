@@ -4,7 +4,7 @@ var g = 1.622;
 var a = g;
 var dt = 0.016683;
 var timer;
-
+var intentos = 1;
 window.onload = function(){
     document.getElementById("showm").onclick = function () {
 		document.getElementsByClassName("c")[0].style.display = "block";
@@ -74,5 +74,15 @@ function pausar() {
 }
 
 function reiniciarJuego() {
-	window.location.reload();
+	intentos++;
+	y = 5; // altura inicial y0=10%, debe leerse al iniciar si queremos que tenga alturas diferentes dependiendo del dispositivo
+	v = 0;
+	g = 1.622;
+	a = g;
+	dt = 0.016683;
+	clearInterval(timer);
+	start();
+	document.getElementById("intentos").innerHTML=intentos;
+	document.getElementById("imgNave").src="img/nave.png";
+	document.getElementById("gameOver").style.display="none";
 }
