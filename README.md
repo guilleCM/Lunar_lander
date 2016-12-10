@@ -1,7 +1,9 @@
 # Lunar_lander
 Proyecto de videojuego **LUNAR LANDER** en _html_ y _css_.   
 __Autor__: Guillermo Cirer  
-__Cliente__: Mariano
+__Cliente__: Mariano  
+
+![Probar el juego (en testeo aun)!](https://rawgit.com/guilleCM/Lunar_lander/master/index.html)  
 
 ### DESCRIPCIÓN PROYECTO:  
 Tengo que desarrollar el proyecto de Mariano, y como cliente me ha proporcionado sus ideas. El archivo que me ha facilitado carece de ciertos elementos que tendré que trabajar a parte. Faltan:  
