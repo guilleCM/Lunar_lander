@@ -17,8 +17,13 @@ window.onload = function(){
 	}
 //Empezar a mover nave
 	start();
+
+//con puntero (smartphone)
 document.getElementById("botonOn").onmousedown = encenderMotor;
 document.getElementById("botonOn").onmouseup = apagarMotor;
+document.getElementById("contenedor").onmouseup = apagarMotor;
+
+//con teclado
 window.onkeydown=function(e) {
 	var claveTecla;
 	if (window.event)
@@ -90,7 +95,6 @@ function mostrarInstrucciones() {
 }
 
 function ocultarInstrucciones() {
-	reanudar();
     document.getElementById("menuInstrucciones").style.display="none";
 }
 

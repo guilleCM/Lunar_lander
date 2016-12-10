@@ -1,4 +1,4 @@
-body,html{
+#contenedor,html{
 	height:100%;padding:0px;margin:0px;
 	background-image: url("../img/fondo.png");
 	font-family: Arial;
@@ -12,7 +12,6 @@ body,html{
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: left bottom;
-	/*	pointer-events: none;*/
 }
 .controlesNave{
 	width: auto; height: auto; max-width: 180px;
@@ -26,6 +25,22 @@ body,html{
 	min-width: 100px;
 }
 
+#botonOn{
+	border-style: solid;
+	border-color: #2E8B57;
+	background-color: #00FA9A;
+	margin: 10px;
+	margin-top: 5%;
+	color: black;
+	width: 70px;
+	height: 70px;
+	background-image: url("../img/propulsor.png");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: 55% 40%;
+	padding-top: 13%;
+}
+#botonOn:hover {background-color: #2E8B57;}
 
 .derecha{
 	background-image: url("../img/sol.png");
@@ -61,6 +76,7 @@ body,html{
 	background-repeat: no-repeat;
 	background-size: 60%;
 	background-position: 50% 50%;
+	pointer-events: auto;
 }
 #pausa {
 	border-style: solid;
