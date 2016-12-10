@@ -18,12 +18,36 @@ window.onload = function(){
 //Empezar a mover nave
 	start();
 
-//con puntero (smartphone)
+/*con puntero (smartphone)
 document.getElementById("botonOn").onmousedown = encenderMotor;
 document.getElementById("botonOn").onmouseup = apagarMotor;
-document.getElementById("contenedor").onmouseup = apagarMotor;
+document.getElementById("contenedor").onmouseup = apagarMotor;*/
 
-//con teclado
+var mousedownID = -1;  //Global ID of mouse down interval
+function mousedown(event) {
+  if(mousedownID==-1)  //Prevent multimple loops!
+     mousedownID = setInterval(whilemousedown, 50 /*execute every 100ms*/);
+
+
+}
+function mouseup(event) {
+   if(mousedownID!=-1) {  //Only stop if exists
+     clearInterval(mousedownID);
+     mousedownID=-1;
+     apagarMotor();
+   }
+
+}
+function whilemousedown() {
+   encenderMotor();
+}
+//Assign events
+document.getElementById("botonOn").addEventListener("mousedown", mousedown);
+document.addEventListener("mouseup", mouseup);
+document.addEventListener("mouseout", mouseup);
+
+
+//con teclado 
 window.onkeydown=function(e) {
 	var claveTecla;
 	if (window.event)
@@ -34,6 +58,7 @@ window.onkeydown=function(e) {
 		{encenderMotor();}
 }
 window.onkeyup=apagarMotor;
+
 
 }
 
