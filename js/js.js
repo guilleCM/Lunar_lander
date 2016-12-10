@@ -15,11 +15,21 @@ window.onload = function(){
 		document.getElementsByClassName("c")[0].style.display = "none";
 		start();
 	}
-
-	document.onkeydown=encenderMotor;
-	document.onkeyup=apagarMotor;
 //Empezar a mover nave
 	start();
+document.getElementById("botonOn").onmousedown = encenderMotor;
+document.getElementById("botonOn").onmouseup = apagarMotor;
+window.onkeydown=function(e) {
+	var claveTecla;
+	if (window.event)
+		claveTecla = window.event.keyCode;
+	else if (e)
+		claveTecla = e.which;
+	if ((claveTecla==32))
+		{encenderMotor();}
+}
+window.onkeyup=apagarMotor;
+
 }
 
 function start(){
@@ -45,6 +55,7 @@ function moverNave(){
 	}
 }
 
+
 function finalizarJuego() {
 	if (v>5) {
 		document.getElementById("imgNave").src="img/nave_rota.gif";
@@ -66,6 +77,8 @@ function encenderMotor() {
 
 		}
 }
+
+
 function apagarMotor() {
 	a=g
 	document.getElementById("imgMotor").style.display="none";
