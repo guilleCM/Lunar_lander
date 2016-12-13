@@ -47,12 +47,14 @@ document.addEventListener("mouseout", mouseup);
 */
 
 var theElement = document.getElementById("botonOn");
-
+theElement.addEventListener("touchstart", handlerFunction, false);
 theElement.addEventListener("touchend", handlerFunction, false);
+theElement.addEventListener("touchend", apagarMotor);
 
 function handlerFunction(event) {
 	encenderMotor();
 }
+
 
 //con teclado 
 window.onkeydown=function(e) {
