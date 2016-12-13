@@ -24,10 +24,11 @@ document.getElementById("botonOn").onmousedown = encenderMotor;
 document.getElementById("botonOn").onmouseup = apagarMotor;
 document.getElementById("contenedor").onmouseup = apagarMotor;*/
 
+/*
 var mousedownID = -1;  //Global ID of mouse down interval
 function mousedown(event) {
   if(mousedownID==-1)  //Prevent multimple loops!
-     mousedownID = setInterval(whilemousedown, 50 /*execute every 100ms*/);
+     mousedownID = setInterval(whilemousedown, 50);
 }
 function mouseup(event) {
    if(mousedownID!=-1) {  //Only stop if exists
@@ -44,6 +45,30 @@ function whilemousedown() {
 document.getElementById("botonOn").addEventListener("mousedown", mousedown);
 document.addEventListener("mouseup", mouseup);
 document.addEventListener("mouseout", mouseup);
+*/
+
+
+var mousedownID = -1;  //Global ID of mouse down interval
+function mousedown(event) {
+  if(mousedownID==-1)  //Prevent multimple loops!
+     mousedownID = setInterval(whilemousedown, 50);
+}
+function mouseup(event) {
+   if(mousedownID!=-1) {  //Only stop if exists
+     clearInterval(mousedownID);
+     mousedownID=-1;
+     apagarMotor();
+   }
+
+}
+function whilemousedown() {
+   encenderMotor();
+}
+//Assign events
+document.getElementById("botonOn").addEventListener("touchstart", mousedown);
+document.addEventListener("touchstart", mouseup);
+document.addEventListener("touchend", mouseup);
+
 
 
 //con teclado 
