@@ -6,6 +6,8 @@ var dt = 0.016683;
 var timer;
 var gasolina=100;
 var intentos = 1;
+var modeloNave=1;
+var imgLuna=1;
 window.onload = function(){
     document.getElementById("showm").onclick = function () {
 		document.getElementsByClassName("c")[0].style.display = "block";
@@ -15,15 +17,54 @@ window.onload = function(){
 		document.getElementsByClassName("c")[0].style.display = "none";
 		start();
 	}
+
+	document.getElementById("modeloLuna").onclick=function(){
+		if (imgLuna==1){
+			document.getElementById("luna").src="img/mod2luna.png";
+			document.getElementById("modeloLuna").innerHTML="Gris";
+			imgLuna=2;
+		} else {
+			document.getElementById("luna").src="img/luna.png";
+			document.getElementById("modeloLuna").innerHTML="Amarilla";
+			imgLuna=1;
+		}
+	}
+
+
+
+	document.getElementById("modeloNave").onclick=function () {
+		if (modeloNave==1) {
+			document.getElementById("imgNave").src="img/mod2nave.gif";
+			document.getElementById("imgMotor").src="img/mod2motor.gif";
+			modeloNave=2;
+			document.getElementById("modeloNave").innerHTML=2;
+
+		}
+		else {
+			document.getElementById("imgNave").src="img/nave.png";
+			document.getElementById("imgMotor").src="img/motor.gif";
+			modeloNave=1;
+			document.getElementById("modeloNave").innerHTML=1;
+		}
+
+	}
+
+
+
 	//alert("¡¡¡Aprieta la tecla espacio para usar el motor!!!")
 //Empezar a mover nave
 	start();
 
-/*con puntero (smartphone)
-document.getElementById("botonOn").onmousedown = encenderMotor;
-document.getElementById("botonOn").onmouseup = apagarMotor;
-document.getElementById("contenedor").onmouseup = apagarMotor;*/
-/*
+/* en prueba smartphone
+var theElement = document.getElementById("botonOn");
+theElement.addEventListener("touchstart", handlerFunction, false);
+theElement.addEventListener("touchend", handlerFunction, false);
+theElement.addEventListener("touchend", apagarMotor);
+function handlerFunction(event) {
+	encenderMotor();
+}
+*/
+
 var mousedownID = -1;  //Global ID of mouse down interval
 function mousedown(event) {
   if(mousedownID==-1)  //Prevent multimple loops!
@@ -44,16 +85,7 @@ function whilemousedown() {
 document.getElementById("botonOn").addEventListener("mousedown", mousedown);
 document.addEventListener("mouseup", mouseup);
 document.addEventListener("mouseout", mouseup);
-*/
 
-var theElement = document.getElementById("botonOn");
-theElement.addEventListener("touchstart", handlerFunction, false);
-theElement.addEventListener("touchend", handlerFunction, false);
-theElement.addEventListener("touchend", apagarMotor);
-
-function handlerFunction(event) {
-	encenderMotor();
-}
 
 
 //con teclado 
@@ -98,9 +130,15 @@ function moverNave(){
 
 function finalizarJuego() {
 	if (v>5) {
-		document.getElementById("imgNave").src="img/nave_rota.gif";
-		document.getElementById("gameOver").style.display="block";
-		document.getElementById("intentos").innerHTML=intentos;
+		if (modeloNave==2) {
+			document.getElementById("imgNave").src="img/mod2rota.gif";
+			document.getElementById("gameOver").style.display="block";
+			document.getElementById("intentos").innerHTML=intentos;
+		} if (modeloNave==1) {
+			document.getElementById("imgNave").src="img/nave_rota.gif";
+			document.getElementById("gameOver").style.display="block";
+			document.getElementById("intentos").innerHTML=intentos;
+		}
 	} else {
 		document.getElementById("userWin").style.display="block";	
 	}
@@ -124,6 +162,14 @@ function encenderMotor() {
 function apagarMotor() {
 	a=g
 	document.getElementById("imgMotor").style.display="none";
+}
+
+function mostrarAjustes() {
+	pausar();
+	document.getElementById("settings").style.display="block";
+}
+function ocultarAjustes() {
+	document.getElementById("settings").style.display="none";
 }
 
 function mostrarInstrucciones() {
@@ -161,10 +207,14 @@ function reiniciarJuego() {
 	clearInterval(timer);
 	start();
 	document.getElementById("intentos").innerHTML=intentos;
-	document.getElementById("imgNave").src="img/nave.png";
 	document.getElementById("gameOver").style.display="none";
 	document.getElementById("userWin").style.display="none";
 	document.getElementById("fuel").innerHTML=gasolina;
+	if (modeloNave==1) {
+		document.getElementById("imgNave").src="img/nave.png";
+	} else {
+		document.getElementById("imgNave").src="img/mod2nave.gif";
+	}
 }
 
 

@@ -39,7 +39,7 @@
 		<a href="#" onclick="pausar();"><div id="pausa">Pausar</div></a>
 		<a href="#" onclick="reiniciarJuego();"><div id="reinicia">Reiniciar</div></a>
 		<a href="#" onclick="mostrarInstrucciones();"><div id="instrucciones">Ayuda</div></a>
-		<div id="ajustes">Ajustes</div>
+		<a href="#" onclick="mostrarAjustes();"><div id="ajustes">Ajustes</div></a>
 </div>
 
 <div id="gameOver">
@@ -63,6 +63,17 @@
 	<p>El juego consiste en frenar la caída de la nave mediante el uso del motor, utiliza la tecla <b>&nbsp;&nbsp;espacio&nbsp;&nbsp;</b> o el botón <b>ON</b> para la version smartphone, para que esta pueda aterrizar adecuadamente sobre la superficie lunar.<br><br>Si el jugador no frena lo suficientemente la caída de la nave (a una <b>velocidad inferior a los 5 m/s</b> ), está colisionará contra el suelo, de modo que esta se estrellará y el jugador no superará el juego.<br><br> Además hay que tener en cuenta que la nave cuenta con un medidor de gasolina que se acabará si el jugador abusa del uso del motor de la nave.</p>
 	<h3><a href="acerca.html">Acerca de...</a></h3>
 </div>
+
+<div id="settings">
+<a href="#" onclick="ocultarAjustes();"><img id="close" src="img/close.png" alt="close"></a>
+	<h3>AJUSTES</h3>
+	<p>Dificultad del juego:<br>
+	<b><span id="dificultad">Proximamente...</span></b><br><br>
+	Modelo luna:<br>
+	<b><span id="modeloLuna">Amarilla</span></b><br><br>
+	</p>
+	Modelo nave:<br>
+	<b><span id="modeloNave">1</span></b>
 
 </body>
 </html>

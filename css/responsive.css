@@ -9,7 +9,7 @@
 	height: 100%;
 	position: fixed;left: 0px;
 	background-image: url("../img/mundo.png");
-	background-size: 100%;
+	background-size: 80%;
 	background-repeat: no-repeat;
 	background-position: left bottom;
 }
@@ -139,7 +139,7 @@
 #ajustes {
 	border-style: outset;
 	border-color: #2E8B57;
-	display: none;
+	display: inline-block;
 	float: right;
 	background-color: #00FA9A;
 	margin: 10px;
@@ -186,6 +186,7 @@
 	bottom:0px;
 	left:20%;
 }
+
 
 #luna {
 	height: 100%; 
@@ -241,3 +242,14 @@ button {
 
 #cpanel{}
 #hidem,#showm{display:none}
+
+#settings{
+	display: none;
+	background-image: url("../img/fondo_instrucciones.jpg");
+	text-align: center;
+	border-style: outset;
+	position: absolute;
+	width: 80%;
+	left: 10%;
+	top: 10%;
+}

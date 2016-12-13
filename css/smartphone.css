@@ -1,12 +1,243 @@
-body,html{
+#contenedor,html{
 	height:100%;padding:0px;margin:0px;
 	background-image: url("../img/fondo.png");
+	font-family: Arial;
 }
-.a{background-color:#00bcd4;width:100%;height:90px;overflow:hidden;position:fixed;top:0px}
-.b{background-color:red;width:100%;height:100%;overflow:hidden;}
-.c{background-color:#cddc39;position:fixed;top:0px;bottom:0px;left:0px;right:0px;display:none;z-index:1}
-.d{background-color:pink;position:fixed;bottom:0px;height:15%;width:100%;}
-#nave{text-align:center;position:fixed;top:10%;width:100%;height:20%}
-#nave img{height:100%;}
+.izquierda{
+	display: inline-block; 
+	width: 50%;
+	height: 100%;
+	position: fixed;left: 0px;
+	background-image: url("../img/mundo.png");
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: bottom left;
+}
+.controlesNave{
+	width: auto; height: auto; 
+	max-width: 71px;
+	background-color: #00FA9A;
+	margin: 10px;
+	width: 100%;
+	border-style: outset;
+	border-color: #2E8B57;
+	font-size: 100%;
+	padding: 2px;
+	margin-bottom: 15px;
+}
+
+#botonOn{
+	display: inline-block;
+	border-style: outset;
+	border-color: #2E8B57;
+	background-color: #00FA9A;
+	margin: 10px;
+	margin-top: 5%;
+	color: black;
+	width: 70px;
+	height: 70px;
+	background-image: url("../img/propulsor.png");
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: 50% 50%;
+	text-align: center;
+}
+#botonOn:hover {background-color: #2E8B57;}
+
+.derecha{
+	background-image: url("../img/sol.png");
+	background-repeat: no-repeat;
+	background-position: 100% 80%; 
+	background-size: 40%;
+	display:block !important;
+	pointer-events: auto;
+}
+.derecha{display:inline-block;width:35%;height:100%;
+	position: fixed; right: 0px;
+}
+
+#reanudar:hover {background-color: #2E8B57; font-size: 100%;}
+
+#pausa:hover {background-color: #2E8B57; font-size: 100%;}
+#reinicia:hover {background-color: #2E8B57; font-size: 100%;}
+#instrucciones:hover {background-color: #2E8B57; font-size: 100%;}
+#ajustes:hover {background-color: #2E8B57; font-size: 100%;}
+#close:hover {background-color: #2E8B57;}
+
+#reanudar {
+	border-style: outset;
+	border-color: #2E8B57;
+	display: none;
+	float: right;
+	background-color: #00FA9A;
+	margin: 10px;
+	margin-top: 5%;
+	color: black;
+	font-size: 0%;
+	text-align: center;
+	width: 70px;
+	height: 70px;
+	background-image: url("../img/play.png");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: 50% 50%;
+	pointer-events: auto;
+}
+#pausa {
+	border-style: outset;
+	border-color: #2E8B57;
+	display: inline-block;
+	float: right;
+	background-color: #00FA9A;
+	margin: 10px;
+	margin-top: 5%;
+	color: black;
+	text-align: center;
+	font-size: 0%;
+	width: 70px;
+	height: 70px;
+	background-image: url("../img/pausa.png");
+	background-repeat: no-repeat;
+	background-size: 40%;
+	background-position: 50% 50%;
+}
+#reinicia {
+	border-style: outset;
+	border-color: #2E8B57;
+	display: inline-block;
+	width: 70px; height: 70px;
+	float: right;
+	font-size: 0%;
+	color: black;
+	text-align: center;
+	background-color: #00FA9A;
+	margin: 10px;
+	margin-top: 5%;
+	background-image: url("../img/reinicia.png");
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-position: 50% 50%;
+}
+#instrucciones {
+	border-style: outset;
+	border-color: #2E8B57;
+	display: inline-block;
+	float: right;
+	background-color: #00FA9A;
+	margin: 10px;
+	margin-top: 5%;
+	width: 70px;
+	height: 70px;
+	color: black;
+	text-align: center;
+	font-size: 0%;
+	background-image: url("../img/ayuda.png");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: 50% 50%;
+}
+#ajustes {
+	border-style: outset;
+	border-color: #2E8B57;
+	display: none;
+	float: right;
+	background-color: #00FA9A;
+	margin: 10px;
+	margin-top: 5%;
+	width: 70px;
+	height: 70px;
+	color: black;
+	text-align: center;
+	font-size: 0%;
+	background-image: url("../img/settings.png");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: 50% 50%;
+}
+
+
+#menuInstrucciones {
+	margin: 5%;
+	background-image: url("../img/fondo_instrucciones.jpg");
+	text-align: center;
+	border-style: outset;
+	position: absolute;
+	display: none;
+}
+#menuInstrucciones b {
+	background-color: #00FA9A;
+	border-style: outset;
+}
+#close {
+	background-color:#00FA9A;
+	border-style: solid;
+	border-color: #2E8B57;
+	max-height: 40px;
+	max-width: 40px;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+}
+
+.zonaAterrizaje{
+	height:15%;
+	width:60%;
+	position:fixed;
+	bottom:0px;
+	left:20%;
+}
+
+#luna {
+	height: 100%; 
+	width: 100%;
+}
+
+#nave{
+	text-align:center;
+	position:fixed;
+	top:5%;
+	width:100%;
+	height:15%;
+}
+
+#imgNave{
+	height:100%;
+	display: block;
+	margin: auto;
+}
+#imgMotor{
+	height: 40%;
+	display: none;
+	margin: auto;
+}
+#gameOver{
+	background-image: url("../img/fondo_instrucciones.jpg");
+	text-align: center;
+	border-style: outset;
+	position: absolute;
+	display: none;
+	width: 80%;
+	left: 10%;
+	top: 10%;
+}
+
+#userWin{
+	background-image: url("../img/fondo_instrucciones.jpg");
+	text-align: center;
+	border-style: outset;
+	position: absolute;
+	display: none;
+	width: 80%;
+	left: 10%;
+	top: 10%;
+}
+
+#intentos {
+}
+button {
+	background-color: #00FA9A;
+	font-family: Arial;
+}
+
 #cpanel{}
-#hidem,#showm{float:right}
+#hidem,#showm{display:none}
