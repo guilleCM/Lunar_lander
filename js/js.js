@@ -15,6 +15,7 @@ window.onload = function(){
 		document.getElementsByClassName("c")[0].style.display = "none";
 		start();
 	}
+	//alert("¡¡¡Aprieta la tecla espacio para usar el motor!!!")
 //Empezar a mover nave
 	start();
 
@@ -27,8 +28,6 @@ var mousedownID = -1;  //Global ID of mouse down interval
 function mousedown(event) {
   if(mousedownID==-1)  //Prevent multimple loops!
      mousedownID = setInterval(whilemousedown, 50 /*execute every 100ms*/);
-
-
 }
 function mouseup(event) {
    if(mousedownID!=-1) {  //Only stop if exists
@@ -55,12 +54,13 @@ window.onkeydown=function(e) {
 	else if (e)
 		claveTecla = e.which;
 	if ((claveTecla==32))
-		{encenderMotor();}
+		{encenderMotor();
+		}
 }
 window.onkeyup=apagarMotor;
-
-
 }
+
+
 
 function start(){
 	timer=setInterval(function(){ moverNave(); }, dt*1000);
@@ -100,6 +100,7 @@ function encenderMotor() {
 	a=-g;
 	gasolina--;
 	document.getElementById("fuel").innerHTML=gasolina;
+	document.getElementById("fuel").style.color="rgb(" + (320-gasolina*3) + ", 0, 0)";
 	document.getElementById("imgMotor").style.display="block";
 	if (gasolina<=0) {
 			apagarMotor();
@@ -107,6 +108,7 @@ function encenderMotor() {
 
 		}
 }
+
 
 
 function apagarMotor() {
@@ -145,6 +147,7 @@ function reiniciarJuego() {
 	a = g;
 	dt = 0.016683;
 	gasolina=100;
+	document.getElementById("fuel").style.color="black";
 	clearInterval(timer);
 	start();
 	document.getElementById("intentos").innerHTML=intentos;

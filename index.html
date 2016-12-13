@@ -22,10 +22,11 @@
 <div class="izquierda">
 	<div id="showm">show menu</div>
 		<div id="cpanel">
-			<div class="controlesNave">Velocidad:<br><span id="velocidad">100</span> m/s</div>
-			<div class="controlesNave">Fuel:<br><span id="fuel">100</span> %</div>
-			<div class="controlesNave">Altura:<br><span id="altura">60</span> m</div>
-			<button id="botonOn"></button>
+			<div class="controlesNave">Velocidad:<br><b><span id="velocidad">100</span></b> m/s</div>
+			<div class="controlesNave">Fuel:<br><b><span id="fuel">100</span></b> %</div>
+			<div class="controlesNave">Altura:<br><b><span id="altura">60</span></b> m</div>
+			<!--<button id="botonOn"></button>-->
+			<div id="botonOn"><b>ON</b></div>
 		</div>
 </div>
 
@@ -34,10 +35,11 @@
 
 <div class="derecha">
 	<div id="hidem">hide menu</div>
-		<a href="#" onclick="reanudar();"><div id="reanudar"></div></a>
-		<a href="#" onclick="pausar();"><div id="pausa"></div></a>
-		<a href="#" onclick="reiniciarJuego();"><div id="reinicia"></div></a>
-		<a href="#" onclick="mostrarInstrucciones();"><div id="instrucciones"></div></a>
+		<a href="#" onclick="reanudar();"><div id="reanudar">Play</div></a>
+		<a href="#" onclick="pausar();"><div id="pausa">Pausar</div></a>
+		<a href="#" onclick="reiniciarJuego();"><div id="reinicia">Reiniciar</div></a>
+		<a href="#" onclick="mostrarInstrucciones();"><div id="instrucciones">Ayuda</div></a>
+		<div id="ajustes">Ajustes</div>
 </div>
 
 <div id="gameOver">

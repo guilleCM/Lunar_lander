@@ -5,7 +5,7 @@
 }
 .izquierda{
 	display: inline-block; 
-	width: 25%;
+	width: 30%;
 	height: 100%;
 	position: fixed;left: 0px;
 	background-image: url("../img/mundo.png");
@@ -14,19 +14,21 @@
 	background-position: left bottom;
 }
 .controlesNave{
-	width: auto; height: auto; max-width: 180px;
+	width: auto; height: auto; 
+	max-width: 150px;
 	background-color: #00FA9A;
 	margin: 10px;
-	margin-top: 6%;
 	width: 100%;
-	border-style: solid;
+	border-style: outset;
 	border-color: #2E8B57;
 	font-size: 120%;
-	min-width: 100px;
+	padding: 2px;
+	margin-bottom: 15px;
 }
 
 #botonOn{
-	border-style: solid;
+	display: inline-block;
+	border-style: outset;
 	border-color: #2E8B57;
 	background-color: #00FA9A;
 	margin: 10px;
@@ -37,8 +39,8 @@
 	background-image: url("../img/propulsor.png");
 	background-repeat: no-repeat;
 	background-size: 60%;
-	background-position: 55% 40%;
-	padding-top: 13%;
+	background-position: 50% 60%;
+	text-align: center;
 }
 #botonOn:hover {background-color: #2E8B57;}
 
@@ -54,22 +56,25 @@
 	position: fixed; right: 0px;
 }
 
-#reanudar:hover {background-color: #2E8B57;}
-#pausa:hover {background-color: #2E8B57;}
-#reinicia:hover {background-color: #2E8B57;}
-#instrucciones:hover {background-color: #2E8B57;}
+#reanudar:hover {background-color: #2E8B57; font-size: 100%;}
+
+#pausa:hover {background-color: #2E8B57; font-size: 100%;}
+#reinicia:hover {background-color: #2E8B57; font-size: 100%;}
+#instrucciones:hover {background-color: #2E8B57; font-size: 100%;}
+#ajustes:hover {background-color: #2E8B57; font-size: 100%;}
 #close:hover {background-color: #2E8B57;}
 
 #reanudar {
-	border-style: solid;
+	border-style: outset;
 	border-color: #2E8B57;
 	display: none;
 	float: right;
 	background-color: #00FA9A;
 	margin: 10px;
 	margin-top: 5%;
-	color: #00FA9A;
+	color: black;
 	font-size: 0%;
+	text-align: center;
 	width: 70px;
 	height: 70px;
 	background-image: url("../img/play.png");
@@ -79,14 +84,15 @@
 	pointer-events: auto;
 }
 #pausa {
-	border-style: solid;
+	border-style: outset;
 	border-color: #2E8B57;
 	display: inline-block;
 	float: right;
 	background-color: #00FA9A;
 	margin: 10px;
 	margin-top: 5%;
-	color: #00FA9A;
+	color: black;
+	text-align: center;
 	font-size: 0%;
 	width: 70px;
 	height: 70px;
@@ -96,13 +102,14 @@
 	background-position: 50% 50%;
 }
 #reinicia {
-	border-style: solid;
+	border-style: outset;
 	border-color: #2E8B57;
 	display: inline-block;
 	width: 70px; height: 70px;
 	float: right;
 	font-size: 0%;
-	color: #00FA9A;
+	color: black;
+	text-align: center;
 	background-color: #00FA9A;
 	margin: 10px;
 	margin-top: 5%;
@@ -112,7 +119,7 @@
 	background-position: 50% 50%;
 }
 #instrucciones {
-	border-style: solid;
+	border-style: outset;
 	border-color: #2E8B57;
 	display: inline-block;
 	float: right;
@@ -121,12 +128,34 @@
 	margin-top: 5%;
 	width: 70px;
 	height: 70px;
+	color: black;
+	text-align: center;
 	font-size: 0%;
-	background-image: url("../img/instrucciones.png");
+	background-image: url("../img/ayuda.png");
 	background-repeat: no-repeat;
-	background-size: 50%;
+	background-size: 60%;
 	background-position: 50% 50%;
 }
+#ajustes {
+	border-style: outset;
+	border-color: #2E8B57;
+	display: none;
+	float: right;
+	background-color: #00FA9A;
+	margin: 10px;
+	margin-top: 5%;
+	width: 70px;
+	height: 70px;
+	color: black;
+	text-align: center;
+	font-size: 0%;
+	background-image: url("../img/settings.png");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: 50% 50%;
+}
+
+
 #menuInstrucciones {
 	margin: 5%;
 	background-image: url("../img/fondo_instrucciones.jpg");
