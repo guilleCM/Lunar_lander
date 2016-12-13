@@ -38,8 +38,8 @@
 	height: 70px;
 	background-image: url("../img/propulsor.png");
 	background-repeat: no-repeat;
-	background-size: 60%;
-	background-position: 50% 60%;
+	background-size: 80%;
+	background-position: 50% 50%;
 	text-align: center;
 }
 #botonOn:hover {background-color: #2E8B57;}
