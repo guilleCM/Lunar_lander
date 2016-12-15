@@ -42,13 +42,13 @@ window.onload = function(){
 			case 1:
 				document.getElementById("imgNave").src="img/mod2nave.gif";
 				document.getElementById("imgMotor").src="img/mod2motor.gif";
-				document.getElementById("modeloNave").innerHTML="2";
+				document.getElementById("modeloNave").innerHTML="Modelo PodRacer";
 				modeloNave=2;
 				break;
 			case 2:
 				document.getElementById("imgNave").src="img/nave.png";
 				document.getElementById("imgMotor").src="img/motor.gif";
-				document.getElementById("modeloNave").innerHTML="1";
+				document.getElementById("modeloNave").innerHTML="Modelo Estándar";
 				modeloNave=1;
 				break;
 			}
@@ -161,12 +161,11 @@ function encenderMotor() {
 	if (gasolina<=0) {
 			apagarMotor();
 			document.getElementById("fuel").innerHTML=0;
-
 		}
 }
 
 function apagarMotor() {
-	a=g
+	a=g;
 	document.getElementById("imgMotor").style.display="none";
 }
 

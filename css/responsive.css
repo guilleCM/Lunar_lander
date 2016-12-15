@@ -172,6 +172,15 @@
 	left: 10%;
 	top: 10%;
 }
+#modeloLuna {
+	padding: 10px;
+	font-size: 120%;
+}
+#modeloNave {
+	padding: 10px;
+	font-size: 120%;
+}
+
 #menuInstrucciones {
 	margin: 5%;
 	background-image: url("../img/fondo_instrucciones.jpg");
