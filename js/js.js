@@ -7,8 +7,10 @@ var timer;
 var gasolina=100;
 var intentos = 1;
 var modeloNave=1;
-var imgLuna=1;
+var modeloLuna=1;
+
 window.onload = function(){
+	/*
     document.getElementById("showm").onclick = function () {
 		document.getElementsByClassName("c")[0].style.display = "block";
 		stop();
@@ -16,43 +18,45 @@ window.onload = function(){
 	document.getElementById("hidem").onclick = function () {
 		document.getElementsByClassName("c")[0].style.display = "none";
 		start();
-	}
+	}*/
 
-	document.getElementById("modeloLuna").onclick=function(){
-		if (imgLuna==1){
-			document.getElementById("luna").src="img/mod2luna.png";
-			document.getElementById("modeloLuna").innerHTML="Gris";
-			imgLuna=2;
-		} else {
-			document.getElementById("luna").src="img/luna.png";
-			document.getElementById("modeloLuna").innerHTML="Amarilla";
-			imgLuna=1;
-		}
-	}
-
-
-
-	document.getElementById("modeloNave").onclick=function () {
-		if (modeloNave==1) {
-			document.getElementById("imgNave").src="img/mod2nave.gif";
-			document.getElementById("imgMotor").src="img/mod2motor.gif";
-			modeloNave=2;
-			document.getElementById("modeloNave").innerHTML=2;
-
-		}
-		else {
-			document.getElementById("imgNave").src="img/nave.png";
-			document.getElementById("imgMotor").src="img/motor.gif";
-			modeloNave=1;
-			document.getElementById("modeloNave").innerHTML=1;
+	//CAMBIAR LA IMAGEN DE LA LUNA
+	document.getElementById("modeloLuna").onclick = function cambiarModeloLuna(){
+		switch(modeloLuna) {
+			case 1:
+				document.getElementById("luna").src="img/mod2luna.png";
+				document.getElementById("modeloLuna").innerHTML="Gris";
+				modeloLuna=2;
+				break;
+			case 2:
+				document.getElementById("luna").src="img/luna.png";
+				document.getElementById("modeloLuna").innerHTML="Amarilla";
+				modeloLuna=1;
+				break;
+			}
 		}
 
-	}
-
-
+	//CAMBIAR LA IMAGEN DE LA NAVE Y EL MOTOR
+	document.getElementById("modeloNave").onclick = function cambiarModeloNave(){
+		switch(modeloNave) {
+			case 1:
+				document.getElementById("imgNave").src="img/mod2nave.gif";
+				document.getElementById("imgMotor").src="img/mod2motor.gif";
+				document.getElementById("modeloNave").innerHTML="2";
+				modeloNave=2;
+				break;
+			case 2:
+				document.getElementById("imgNave").src="img/nave.png";
+				document.getElementById("imgMotor").src="img/motor.gif";
+				document.getElementById("modeloNave").innerHTML="1";
+				modeloNave=1;
+				break;
+			}
+		}
 
 	//alert("¡¡¡Aprieta la tecla espacio para usar el motor!!!")
-//Empezar a mover nave
+
+	//Empezar a mover nave
 	start();
 
 /* en prueba smartphone
@@ -69,7 +73,7 @@ var mousedownID = -1;  //Global ID of mouse down interval
 function mousedown(event) {
   if(mousedownID==-1)  //Prevent multimple loops!
      mousedownID = setInterval(whilemousedown, 50);
-}
+	}
 function mouseup(event) {
    if(mousedownID!=-1) {  //Only stop if exists
      clearInterval(mousedownID);
@@ -77,10 +81,10 @@ function mouseup(event) {
      apagarMotor();
    }
 
-}
+	}
 function whilemousedown() {
    encenderMotor();
-}
+	}
 //Assign events
 document.getElementById("botonOn").addEventListener("mousedown", mousedown);
 document.addEventListener("mouseup", mouseup);
@@ -98,50 +102,54 @@ window.onkeydown=function(e) {
 	if ((claveTecla==32))
 		{encenderMotor();
 		}
-}
+	}
 window.onkeyup=apagarMotor;
 }
 
-
-
+//FUNCION EMPEZAR EL JUEGO
 function start(){
 	timer=setInterval(function(){ moverNave(); }, dt*1000);
 }
 
+//FUNCION PARAR NAVE Y CONTROLADORES
 function stop(){
 	clearInterval(timer);
 }
 
+//FUNCION PARA QUE CAIGA LA NAVE A TRAVES DE LA PANTALLA
 function moverNave(){
 	v +=a*dt;
 	document.getElementById("velocidad").innerHTML=v.toFixed(2);
 	y +=v*dt;
 	document.getElementById("altura").innerHTML=y.toFixed(2);
-	
+
 	//mover hasta que top sea un 70% de la pantalla
 	if (y<70){ 
 		document.getElementById("nave").style.top = y+"%"; 
 	} else { 
 		stop();
 		finalizarJuego();
-	}
+		}	
 }
 
-
+//FUNCION PARA ACABAR EL JUEGO
 function finalizarJuego() {
 	if (v>5) {
-		if (modeloNave==2) {
-			document.getElementById("imgNave").src="img/mod2rota.gif";
-			document.getElementById("gameOver").style.display="block";
-			document.getElementById("intentos").innerHTML=intentos;
-		} if (modeloNave==1) {
+		switch (modeloNave) {
+			case 1:
 			document.getElementById("imgNave").src="img/nave_rota.gif";
 			document.getElementById("gameOver").style.display="block";
 			document.getElementById("intentos").innerHTML=intentos;
+			break;
+			case 2:
+			document.getElementById("imgNave").src="img/mod2rota.gif";
+			document.getElementById("gameOver").style.display="block";
+			document.getElementById("intentos").innerHTML=intentos;
+			break;
+			}
+		} else {
+			document.getElementById("userWin").style.display="block";	
 		}
-	} else {
-		document.getElementById("userWin").style.display="block";	
-	}
 }
 
 function encenderMotor() {
@@ -156,8 +164,6 @@ function encenderMotor() {
 
 		}
 }
-
-
 
 function apagarMotor() {
 	a=g
