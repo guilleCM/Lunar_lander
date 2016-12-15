@@ -3,19 +3,20 @@
 	background-image: url("../img/fondo.png");
 	font-family: Arial;
 }
+
 .izquierda{
 	display: inline-block; 
-	width: 50%;
+	width: 25%;
 	height: 100%;
 	position: fixed;left: 0px;
-	background-image: url("../img/mundo.png");
-	background-size: 80%;
+	background-image: url("../img/mundoSmartphone.png");
+	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: bottom left;
 }
 .controlesNave{
 	width: auto; height: auto; 
-	max-width: 71px;
+	max-width: 90px;
 	background-color: #00FA9A;
 	margin: 10px;
 	width: 100%;
@@ -43,25 +44,31 @@
 	text-align: center;
 }
 #botonOn:hover {background-color: #2E8B57;}
+#botonOn:active {border-style: inset;}
+
 
 .derecha{
 	background-image: url("../img/sol.png");
 	background-repeat: no-repeat;
-	background-position: 100% 80%; 
-	background-size: 40%;
+	background-position: 100% 50%; 
+	background-size: 20%;
 	display:block !important;
 	pointer-events: auto;
 }
-.derecha{display:inline-block;width:35%;height:100%;
-	position: fixed; right: 0px;
+.derecha{display:inline-block;width:100%;height:100%;
 }
 
+#reanudar:active {border-style: inset;}
 #reanudar:hover {background-color: #2E8B57; font-size: 100%;}
-
+#pausa:active {border-style: inset;}
 #pausa:hover {background-color: #2E8B57; font-size: 100%;}
+#reinicia:active {border-style: inset;}
 #reinicia:hover {background-color: #2E8B57; font-size: 100%;}
+#instrucciones:active {border-style: inset;}
 #instrucciones:hover {background-color: #2E8B57; font-size: 100%;}
-#ajustes:hover {background-color: #2E8B57; font-size: 100%;}
+#botonAjustes:active {border-style: inset;}
+#botonAjustes:hover {background-color: #2E8B57; font-size: 100%;}
+#close:active {border-style: inset;}
 #close:hover {background-color: #2E8B57;}
 
 #reanudar {
@@ -86,7 +93,7 @@
 #pausa {
 	border-style: outset;
 	border-color: #2E8B57;
-	display: inline-block;
+	display: none;
 	float: right;
 	background-color: #00FA9A;
 	margin: 10px;
@@ -104,7 +111,7 @@
 #reinicia {
 	border-style: outset;
 	border-color: #2E8B57;
-	display: inline-block;
+	display: none;
 	width: 70px; height: 70px;
 	float: right;
 	font-size: 0%;
@@ -121,7 +128,7 @@
 #instrucciones {
 	border-style: outset;
 	border-color: #2E8B57;
-	display: inline-block;
+	display: none;
 	float: right;
 	background-color: #00FA9A;
 	margin: 10px;
@@ -136,7 +143,7 @@
 	background-size: 60%;
 	background-position: 50% 50%;
 }
-#ajustes {
+#botonAjustes {
 	border-style: outset;
 	border-color: #2E8B57;
 	display: none;
@@ -154,7 +161,24 @@
 	background-size: 60%;
 	background-position: 50% 50%;
 }
-
+#settings{
+	display: none;
+	background-image: url("../img/fondo_instrucciones.jpg");
+	text-align: center;
+	border-style: outset;
+	position: absolute;
+	width: 80%;
+	left: 10%;
+	top: 10%;
+}
+#modeloLuna {
+	padding: 10px;
+	font-size: 120%;
+}
+#modeloNave {
+	padding: 10px;
+	font-size: 120%;
+}
 
 #menuInstrucciones {
 	margin: 5%;
@@ -172,8 +196,8 @@
 	background-color:#00FA9A;
 	border-style: solid;
 	border-color: #2E8B57;
-	max-height: 40px;
-	max-width: 40px;
+	width: 5%;
+	max-width: 50px;
 	position: absolute;
 	top: 2px;
 	right: 2px;
@@ -181,16 +205,16 @@
 
 .zonaAterrizaje{
 	height:15%;
-	width:60%;
+	width:100%;
 	position:fixed;
 	bottom:0px;
-	left:20%;
+	left:0%;
 }
-
 #luna {
 	height: 100%; 
 	width: 100%;
 }
+
 
 #nave{
 	text-align:center;
@@ -199,7 +223,6 @@
 	width:100%;
 	height:15%;
 }
-
 #imgNave{
 	height:100%;
 	display: block;
@@ -210,6 +233,7 @@
 	display: none;
 	margin: auto;
 }
+
 #gameOver{
 	background-image: url("../img/fondo_instrucciones.jpg");
 	text-align: center;
@@ -231,13 +255,30 @@
 	left: 10%;
 	top: 10%;
 }
-
 #intentos {
-}
-button {
-	background-color: #00FA9A;
-	font-family: Arial;
 }
 
 #cpanel{}
-#hidem,#showm{display:none}
+#showm{display:none}
+#showMenu{
+	display:inline-block;
+	border-style: outset;
+	border-color: #2E8B57;
+	display: inline-block;
+	float: right;
+	background-color: #00FA9A;
+	margin: 10px;
+	margin-top: 5%;
+	width: 70px;
+	height: 70px;
+	color: black;
+	text-align: center;
+	font-size: 0%;
+	background-image: url("../img/instrucciones.png");
+	background-repeat: no-repeat;
+	background-size: 40%;
+	background-position: 50% 50%;
+}
+
+#showMenu:active {border-style: inset;}
+#showMenu:hover {background-color: #2E8B57; font-size: 100%;}

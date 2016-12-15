@@ -19,6 +19,7 @@ window.onload = function(){
 		document.getElementsByClassName("c")[0].style.display = "none";
 		start();
 	}*/
+	alert("HE CAMBIADO A VERSION SMARTPHONE")
 	//CAMBIAR LA IMAGEN DE LA LUNA
 	document.getElementById("modeloLuna").onclick = function cambiarModeloLuna(){
 		switch(modeloLuna) {
@@ -220,4 +221,5 @@ function reiniciarJuego() {
 		document.getElementById("imgNave").src="img/mod2nave.gif";
 	}
 }
+
 
