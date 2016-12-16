@@ -19,14 +19,14 @@ window.onload = function arrancarJuego(){
 		document.getElementsByClassName("c")[0].style.display = "none";
 		start();
 	}*/
-
+/*
 window.addEventListener('load', function(){
     var box1 = document.getElementById('botonOn')
     //var statusdiv = document.getElementById('statusdiv')
     //var startx = 0
     //var dist = 0
     box1.addEventListener('touchstart', function(e){
-        var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
+        var touchobj = e.changedTouches[0]; // reference first touch point (ie: first finger)
        // startx = parseInt(touchobj.clientX) // get x position of touch point relative to left edge of browser
         //statusdiv.innerHTML = 'Status: touchstart<br> ClientX: ' + startx + 'px'
         encenderMotor();
@@ -40,13 +40,13 @@ window.addEventListener('load', function(){
     //    e.preventDefault()
     //}, false)
     box1.addEventListener('touchend', function(e){
-        var touchobj = e.changedTouches[0] // reference first touch point for this event
+        var touchobj = e.changedTouches[0]; // reference first touch point for this event
         //statusdiv.innerHTML = 'Status: touchend<br> Resting x coordinate: ' + touchobj.clientX + 'px'
         apagarMotor();
         e.preventDefault();
     }, false)
 }, false)
-
+*/
 
 
 
@@ -89,15 +89,18 @@ window.addEventListener('load', function(){
 	//Empezar a mover nave
 	start();
 
-/* en prueba smartphone
+
 var theElement = document.getElementById("botonOn");
 theElement.addEventListener("touchstart", handlerFunction, false);
-theElement.addEventListener("touchend", handlerFunction, false);
-theElement.addEventListener("touchend", apagarMotor);
+theElement.addEventListener("touchend", endingFunction, false);
+//theElement.addEventListener("touchend", apagarMotor);
 function handlerFunction(event) {
 	encenderMotor();
 }
-*/
+function endingFunction(event) {
+	apagarMotor();
+}
+
 /*
 var mousedownID = -1;  //Global ID of mouse down interval
 function mousedown(event) {
