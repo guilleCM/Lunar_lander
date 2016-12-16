@@ -8,17 +8,9 @@ var gasolina=100;
 var intentos = 1;
 var modeloNave=1;
 var modeloLuna=1;
+var timerFuel=null;
 
-window.onload = function(){
-	/*
-    document.getElementById("showm").onclick = function () {
-		document.getElementsByClassName("c")[0].style.display = "block";
-		stop();
-	}
-	document.getElementById("hidem").onclick = function () {
-		document.getElementsByClassName("c")[0].style.display = "none";
-		start();
-	}*/
+window.onload = function arrancarJuego(){
 	//CAMBIAR LA IMAGEN DE LA LUNA
 	document.getElementById("modeloLuna").onclick = function cambiarModeloLuna(){
 		switch(modeloLuna) {
@@ -53,57 +45,36 @@ window.onload = function(){
 			}
 		}
 
-	//alert("¡¡¡Aprieta la tecla espacio para usar el motor!!!")
-
 	//Empezar a mover nave
 	start();
 
-/* en prueba smartphone
-var theElement = document.getElementById("botonOn");
-theElement.addEventListener("touchstart", handlerFunction, false);
-theElement.addEventListener("touchend", handlerFunction, false);
-theElement.addEventListener("touchend", apagarMotor);
-function handlerFunction(event) {
-	encenderMotor();
-}
-*/
+	//EVENTOS ONCLICK (botonON) PARA VERSION ESCRITORIO
+	var botonOnClick = document.getElementById("botonOn");
+	botonOnClick.addEventListener("mousedown", handlerFunction, false);
+	botonOnClick.addEventListener("whilemousedown", handlerFunction, false);
+	botonOnClick.addEventListener("mouseup", endingFunction, false);
+	botonOnClick.addEventListener("mouseout", endingFunction, false);
 
-var mousedownID = -1;  //Global ID of mouse down interval
-function mousedown(event) {
-  if(mousedownID==-1)  //Prevent multimple loops!
-     mousedownID = setInterval(whilemousedown, 50);
+	function handlerFunction(event) {
+		encenderMotor();
 	}
-function mouseup(event) {
-   if(mousedownID!=-1) {  //Only stop if exists
-     clearInterval(mousedownID);
-     mousedownID=-1;
-     apagarMotor();
-   }
-
+	function endingFunction(event) {
+		apagarMotor();
 	}
-function whilemousedown() {
-   encenderMotor();
-	}
-//Assign events
-document.getElementById("botonOn").addEventListener("mousedown", mousedown);
-document.addEventListener("mouseup", mouseup);
-document.addEventListener("mouseout", mouseup);
-
-
-
-//con teclado 
-window.onkeydown=function(e) {
-	var claveTecla;
-	if (window.event)
-		claveTecla = window.event.keyCode;
-	else if (e)
-		claveTecla = e.which;
-	if ((claveTecla==32))
-		{encenderMotor();
+	//CON TECLADO (tecla ESPACIO)
+	window.onkeydown=function(e) {
+		var claveTecla;
+		if (window.event)
+			claveTecla = window.event.keyCode;
+		else if (e)
+			claveTecla = e.which;
+		if ((claveTecla==32))
+			{encenderMotor();
+			}
 		}
-	}
-window.onkeyup=apagarMotor;
-}
+	window.onkeyup=apagarMotor;
+}//TERMINA EL WINDOW.ONLOAD
+
 
 //FUNCION EMPEZAR EL JUEGO
 function start(){
@@ -151,21 +122,36 @@ function finalizarJuego() {
 		}
 }
 
+//FUNCION QUE ACTUA EN CUANTO SE ENCIENDE EL MOTOR
 function encenderMotor() {
 	a=-g;
-	gasolina--;
 	document.getElementById("fuel").innerHTML=gasolina;
 	document.getElementById("fuel").style.color="rgb(" + (320-gasolina*3) + ", 0, 0)";
 	document.getElementById("imgMotor").style.display="block";
+	if (timerFuel==null) { 
+			timerFuel=setInterval(function(){ actualizarGasolina(); }, 100);
+			}
 	if (gasolina<=0) {
 			apagarMotor();
 			document.getElementById("fuel").innerHTML=0;
 		}
 }
-
+//FUNCION QUE ACTUALIZA EL MARCADOR DE FUEL
+function actualizarGasolina(){
+	gasolina-=1;
+	document.getElementById("fuel").innerHTML=gasolina;
+	document.getElementById("fuel").style.color="rgb(" + (320-gasolina*3) + ", 0, 0)";
+	if (gasolina<=0) {
+		apagarMotor();
+		document.getElementById("fuel").innerHTML=0;
+	}
+}
+//FUNCION QUE RESPONDE AL MOMENTO DE APAGAR EL MOTOR DE LA NAVE
 function apagarMotor() {
 	a=g;
 	document.getElementById("imgMotor").style.display="none";
+	clearInterval(timerFuel);
+	timerFuel=null;
 }
 
 function mostrarAjustes() {
@@ -183,17 +169,6 @@ function mostrarInstrucciones() {
 
 function ocultarInstrucciones() {
     document.getElementById("menuInstrucciones").style.display="none";
-}
-
-function reanudar() {
-	start();
-	document.getElementById("reanudar").style.display="none";
-	document.getElementById("pausa").style.display="inline-block";
-}
-function pausar() {
-	stop();
-	document.getElementById("pausa").style.display="none";
-	document.getElementById("reanudar").style.display="inline-block";
 }
 
 function reiniciarJuego() {
@@ -220,4 +195,18 @@ function reiniciarJuego() {
 		document.getElementById("imgNave").src="img/mod2nave.gif";
 	}
 }
+
+//OJO DISTINTO DE SMARTPHONE
+function reanudar() {
+	start();
+	document.getElementById("reanudar").style.display="none";
+	document.getElementById("pausa").style.display="inline-block";
+}
+function pausar() {
+	stop();
+	document.getElementById("pausa").style.display="none";
+	document.getElementById("reanudar").style.display="inline-block";
+}
+
+
 

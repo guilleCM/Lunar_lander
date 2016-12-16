@@ -11,7 +11,6 @@ var modeloLuna=1;
 var timerFuel=null;
 
 window.onload = function arrancarJuego(){
-
 	//CAMBIAR LA IMAGEN DE LA LUNA
 	document.getElementById("modeloLuna").onclick = function cambiarModeloLuna(){
 		switch(modeloLuna) {
@@ -59,41 +58,8 @@ window.onload = function arrancarJuego(){
 	function endingFunction(event) {
 		apagarMotor();
 	}
+}//TERMINA EL WINDOW.ONLOAD
 
-	/* 
-	//BOTON ON PARA VERSION ESCRITORIO (ON CLICK)
-	var mousedownID = -1;  //Global ID of mouse down interval
-	function mousedown(event) {
-	  if(mousedownID==-1)  //Prevent multimple loops!
-	     mousedownID = setInterval(whilemousedown, 50);
-	}
-	function mouseup(event) {
-	   if(mousedownID!=-1) {  //Only stop if exists
-	     clearInterval(mousedownID);
-	     mousedownID=-1;
-	     apagarMotor();
-		}
-	}
-	function whilemousedown() {
-	   encenderMotor();
-	}
-	*/
-
-	//ARRANCAR MOTOR CON TECLADO (ESPACIO)
-	/*
-	window.onkeydown=function(e) {
-		var claveTecla;
-		if (window.event)
-			claveTecla = window.event.keyCode;
-		else if (e)
-			claveTecla = e.which;
-		if ((claveTecla==32))
-			{encenderMotor();
-			}
-		}
-	window.onkeyup=apagarMotor;
-	*/
-}
 
 //FUNCION EMPEZAR EL JUEGO
 function start(){
@@ -143,7 +109,6 @@ function finalizarJuego() {
 //FUNCION QUE ACTUA EN CUANTO SE ENCIENDE EL MOTOR
 function encenderMotor() {
 	a=-g;
-	//gasolina--;
 	document.getElementById("fuel").innerHTML=gasolina;
 	document.getElementById("fuel").style.color="rgb(" + (320-gasolina*3) + ", 0, 0)";
 	document.getElementById("imgMotor").style.display="block";
@@ -158,7 +123,8 @@ function encenderMotor() {
 //FUNCION QUE ACTUALIZA EL MARCADOR DE FUEL
 function actualizarGasolina(){
 	gasolina-=1;
-	document.getElementById("fuel").innerHTML=gasolina;	
+	document.getElementById("fuel").innerHTML=gasolina;
+	document.getElementById("fuel").style.color="rgb(" + (320-gasolina*3) + ", 0, 0)";
 	if (gasolina<=0) {
 		apagarMotor();
 		document.getElementById("fuel").innerHTML=0;
@@ -189,6 +155,34 @@ function ocultarInstrucciones() {
     document.getElementById("menuInstrucciones").style.display="none";
 }
 
+function reiniciarJuego() {
+	stop();
+	document.getElementById("reanudar").style.display="none";
+	document.getElementById("pausa").style.display="inline-block";
+	intentos++;
+	y = 5; // altura inicial y0=10%, debe leerse al iniciar si queremos que tenga alturas diferentes dependiendo del dispositivo
+	v = 0;
+	g = 1.622;
+	a = g;
+	dt = 0.016683;
+	gasolina=100;
+	document.getElementById("fuel").style.color="black";
+	reanudar();
+	clearInterval(timer);
+	start();
+	document.getElementById("intentos").innerHTML=intentos;
+	document.getElementById("gameOver").style.display="none";
+	document.getElementById("userWin").style.display="none";
+	document.getElementById("fuel").innerHTML=gasolina;
+	if (modeloNave==1) {
+		document.getElementById("imgNave").src="img/nave.png";
+	} else {
+		document.getElementById("imgNave").src="img/mod2nave.gif";
+	}
+}
+
+
+//OJO DISTINTO DE ESCRITORIO
 function reanudar() {
 	start();
 	document.getElementById("reanudar").style.display="none";
@@ -221,30 +215,6 @@ function pausar() {
 	document.getElementById('derecha').style.width='100%';
 	 	
 }
-function reiniciarJuego() {
-	stop();
-	document.getElementById("reanudar").style.display="none";
-	document.getElementById("pausa").style.display="inline-block";
-	intentos++;
-	y = 5; // altura inicial y0=10%, debe leerse al iniciar si queremos que tenga alturas diferentes dependiendo del dispositivo
-	v = 0;
-	g = 1.622;
-	a = g;
-	dt = 0.016683;
-	gasolina=100;
-	document.getElementById("fuel").style.color="black";
-	reanudar();
-	clearInterval(timer);
-	start();
-	document.getElementById("intentos").innerHTML=intentos;
-	document.getElementById("gameOver").style.display="none";
-	document.getElementById("userWin").style.display="none";
-	document.getElementById("fuel").innerHTML=gasolina;
-	if (modeloNave==1) {
-		document.getElementById("imgNave").src="img/nave.png";
-	} else {
-		document.getElementById("imgNave").src="img/mod2nave.gif";
-	}
-}
+
 
 
