@@ -179,6 +179,10 @@ function encenderMotor() {
 function actualizarGasolina(){
 	gasolina-=1;
 	document.getElementById("fuel").innerHTML=gasolina;	
+	if (gasolina<=0) {
+		apagarMotor();
+		document.getElementById("fuel").innerHTML=0;
+	}
 }
 
 function apagarMotor() {
