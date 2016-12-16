@@ -71,7 +71,7 @@ window.onload = function arrancarJuego(){
 		if ((claveTecla==32))
 			{encenderMotor();
 			}
-		}
+	}
 	window.onkeyup=apagarMotor;
 }//TERMINA EL WINDOW.ONLOAD
 
