@@ -43,8 +43,8 @@
 	background-position: 50% 50%;
 	text-align: center;
 }
-#botonOn:hover {background-color: #2E8B57;}
-#botonOn:active {border-style: inset;}
+
+#botonOn:active {border-style: inset; background-color: #2E8B57;}
 
 
 #derecha{
@@ -59,18 +59,12 @@
 	position: fixed; right: 0px;
 }
 
-#reanudar:active {border-style: inset;}
-#reanudar:hover {background-color: #2E8B57;}
-#pausa:active {border-style: inset;}
-#pausa:hover {background-color: #2E8B57; font-size: 100%;}
-#reinicia:active {border-style: inset;}
-#reinicia:hover {background-color: #2E8B57;}
-#instrucciones:active {border-style: inset;}
-#instrucciones:hover {background-color: #2E8B57;}
-#botonAjustes:active {border-style: inset;}
-#botonAjustes:hover {background-color: #2E8B57;}
-#close:active {border-style: inset;}
-#close:hover {background-color: #2E8B57;}
+#reanudar:active {border-style: inset;background-color: #2E8B57;}
+#pausa:active {border-style: inset;background-color: #2E8B57;font-size: 100%;}
+#reinicia:active {border-style: inset;background-color: #2E8B57;}
+#instrucciones:active {border-style: inset;background-color: #2E8B57;}
+#botonAjustes:active {border-style: inset;background-color: #2E8B57;}
+#close:active {border-style: inset;background-color: #2E8B57;}
 
 #reanudar {
 	border-style: outset;

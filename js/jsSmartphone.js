@@ -11,18 +11,6 @@ var modeloLuna=1;
 var timerFuel=null;
 
 window.onload = function arrancarJuego(){
-	/*
-    document.getElementById("showm").onclick = function () {
-		document.getElementsByClassName("c")[0].style.display = "block";
-		stop();
-	}
-	document.getElementById("hidem").onclick = function () {
-		document.getElementsByClassName("c")[0].style.display = "none";
-		start();
-	}*/
-
-
-
 
 	//CAMBIAR LA IMAGEN DE LA LUNA
 	document.getElementById("modeloLuna").onclick = function cambiarModeloLuna(){
@@ -58,61 +46,53 @@ window.onload = function arrancarJuego(){
 			}
 		}
 
-	//alert("¡¡¡Aprieta la tecla espacio para usar el motor!!!")
-
 	//Empezar a mover nave
 	start();
 
-
-var theElement = document.getElementById("botonOn");
-theElement.addEventListener("touchstart", handlerFunction, false);
-theElement.addEventListener("touchend", endingFunction, false);
-//theElement.addEventListener("touchend", apagarMotor);
-function handlerFunction(event) {
-	encenderMotor();
-}
-function endingFunction(event) {
-	apagarMotor();
-}
-
-/*
-var mousedownID = -1;  //Global ID of mouse down interval
-function mousedown(event) {
-  if(mousedownID==-1)  //Prevent multimple loops!
-     mousedownID = setInterval(whilemousedown, 50);
+	//ASIGNAR EVENTOS TOUCH SCREEN PARA LA VERSION SMARTPHONE
+	var botonOnSmartphone = document.getElementById("botonOn");
+	botonOnSmartphone.addEventListener("touchstart", handlerFunction, false);
+	botonOnSmartphone.addEventListener("touchend", endingFunction, false);
+	function handlerFunction(event) {
+		encenderMotor();
 	}
-function mouseup(event) {
-   if(mousedownID!=-1) {  //Only stop if exists
-     clearInterval(mousedownID);
-     mousedownID=-1;
-     apagarMotor();
-   }
-
+	function endingFunction(event) {
+		apagarMotor();
 	}
-function whilemousedown() {
-   encenderMotor();
+
+	/* 
+	//BOTON ON PARA VERSION ESCRITORIO (ON CLICK)
+	var mousedownID = -1;  //Global ID of mouse down interval
+	function mousedown(event) {
+	  if(mousedownID==-1)  //Prevent multimple loops!
+	     mousedownID = setInterval(whilemousedown, 50);
 	}
-	*/
-//Assign events
-/*
-document.getElementById("botonOn").addEventListener("mousedown", mousedown);
-document.addEventListener("mouseup", mouseup);
-document.addEventListener("mouseout", mouseup);
-*/
-
-
-//con teclado 
-window.onkeydown=function(e) {
-	var claveTecla;
-	if (window.event)
-		claveTecla = window.event.keyCode;
-	else if (e)
-		claveTecla = e.which;
-	if ((claveTecla==32))
-		{encenderMotor();
+	function mouseup(event) {
+	   if(mousedownID!=-1) {  //Only stop if exists
+	     clearInterval(mousedownID);
+	     mousedownID=-1;
+	     apagarMotor();
 		}
 	}
-window.onkeyup=apagarMotor;
+	function whilemousedown() {
+	   encenderMotor();
+	}
+	*/
+
+	//ARRANCAR MOTOR CON TECLADO (ESPACIO)
+	/*
+	window.onkeydown=function(e) {
+		var claveTecla;
+		if (window.event)
+			claveTecla = window.event.keyCode;
+		else if (e)
+			claveTecla = e.which;
+		if ((claveTecla==32))
+			{encenderMotor();
+			}
+		}
+	window.onkeyup=apagarMotor;
+	*/
 }
 
 //FUNCION EMPEZAR EL JUEGO
@@ -131,14 +111,13 @@ function moverNave(){
 	document.getElementById("velocidad").innerHTML=v.toFixed(2);
 	y +=v*dt;
 	document.getElementById("altura").innerHTML=y.toFixed(2);
-
 	//mover hasta que top sea un 70% de la pantalla
 	if (y<70){ 
 		document.getElementById("nave").style.top = y+"%"; 
 	} else { 
 		stop();
 		finalizarJuego();
-		}	
+	}	
 }
 
 //FUNCION PARA ACABAR EL JUEGO
@@ -161,6 +140,7 @@ function finalizarJuego() {
 		}
 }
 
+//FUNCION QUE ACTUA EN CUANTO SE ENCIENDE EL MOTOR
 function encenderMotor() {
 	a=-g;
 	//gasolina--;
@@ -175,7 +155,7 @@ function encenderMotor() {
 			document.getElementById("fuel").innerHTML=0;
 		}
 }
-
+//FUNCION QUE ACTUALIZA EL MARCADOR DE FUEL
 function actualizarGasolina(){
 	gasolina-=1;
 	document.getElementById("fuel").innerHTML=gasolina;	
@@ -184,7 +164,7 @@ function actualizarGasolina(){
 		document.getElementById("fuel").innerHTML=0;
 	}
 }
-
+//FUNCION QUE RESPONDE AL MOMENTO DE APAGAR EL MOTOR DE LA NAVE
 function apagarMotor() {
 	a=g;
 	document.getElementById("imgMotor").style.display="none";
