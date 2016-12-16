@@ -20,6 +20,36 @@ window.onload = function arrancarJuego(){
 		start();
 	}*/
 
+window.addEventListener('load', function(){
+    var box1 = document.getElementById('botonOn')
+    //var statusdiv = document.getElementById('statusdiv')
+    //var startx = 0
+    //var dist = 0
+    box1.addEventListener('touchstart', function(e){
+        var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
+       // startx = parseInt(touchobj.clientX) // get x position of touch point relative to left edge of browser
+        //statusdiv.innerHTML = 'Status: touchstart<br> ClientX: ' + startx + 'px'
+        encenderMotor();
+        e.preventDefault();
+    }, false)
+
+    //box1.addEventListener('touchmove', function(e){
+    //   var touchobj = e.changedTouches[0] // reference first touch point for this event
+    //    var dist = parseInt(touchobj.clientX) - startx
+    //    statusdiv.innerHTML = 'Status: touchmove<br> Horizontal distance traveled: ' + dist + 'px'
+    //    e.preventDefault()
+    //}, false)
+    box1.addEventListener('touchend', function(e){
+        var touchobj = e.changedTouches[0] // reference first touch point for this event
+        //statusdiv.innerHTML = 'Status: touchend<br> Resting x coordinate: ' + touchobj.clientX + 'px'
+        apagarMotor();
+        e.preventDefault();
+    }, false)
+}, false)
+
+
+
+
 	//CAMBIAR LA IMAGEN DE LA LUNA
 	document.getElementById("modeloLuna").onclick = function cambiarModeloLuna(){
 		switch(modeloLuna) {
@@ -68,7 +98,7 @@ function handlerFunction(event) {
 	encenderMotor();
 }
 */
-
+/*
 var mousedownID = -1;  //Global ID of mouse down interval
 function mousedown(event) {
   if(mousedownID==-1)  //Prevent multimple loops!
@@ -85,11 +115,13 @@ function mouseup(event) {
 function whilemousedown() {
    encenderMotor();
 	}
+	*/
 //Assign events
+/*
 document.getElementById("botonOn").addEventListener("mousedown", mousedown);
 document.addEventListener("mouseup", mouseup);
 document.addEventListener("mouseout", mouseup);
-
+*/
 
 
 //con teclado 
