@@ -4,7 +4,7 @@
 	font-family: Arial;
 }
 
-.izquierda{
+#izquierda{
 	display: inline-block; 
 	width: 30%;
 	height: 100%;
@@ -47,7 +47,7 @@
 #botonOn:active {border-style: inset;}
 
 
-.derecha{
+#derecha{
 	background-image: url("../img/sol.png");
 	background-repeat: no-repeat;
 	background-position: right; 
@@ -55,7 +55,7 @@
 	display:block !important;
 	pointer-events: auto;
 }
-.derecha{display:inline-block;width:35%;height:100%;
+#derecha{display:inline-block;width:35%;height:100%;
 	position: fixed; right: 0px;
 }
 
@@ -91,6 +91,10 @@
 	background-position: 50% 50%;
 	pointer-events: auto;
 }
+#reanudar p {
+	margin-top: 0px;
+}
+
 #pausa {
 	border-style: outset;
 	border-color: #2E8B57;
@@ -118,6 +122,7 @@
 	font-size: 0%;
 	color: black;
 	text-align: center;
+	vertical-align: text-top;
 	background-color: #00FA9A;
 	margin: 10px;
 	margin-top: 5%;
@@ -125,6 +130,9 @@
 	background-repeat: no-repeat;
 	background-size: 50%;
 	background-position: 50% 50%;
+}
+#reinicia p {
+	margin-top: 0px;
 }
 #instrucciones {
 	border-style: outset;
@@ -144,6 +152,9 @@
 	background-size: 60%;
 	background-position: 50% 50%;
 }
+#instrucciones p {
+	margin-top: 0px;
+}
 #botonAjustes {
 	border-style: outset;
 	border-color: #2E8B57;
@@ -161,6 +172,9 @@
 	background-repeat: no-repeat;
 	background-size: 60%;
 	background-position: 50% 50%;
+}
+#botonAjustes p {
+	margin-top: 0px;
 }
 #settings{
 	display: none;
@@ -204,7 +218,7 @@
 	right: 2px;
 }
 
-.zonaAterrizaje{
+#zonaAterrizaje{
 	height:15%;
 	width:60%;
 	position:fixed;

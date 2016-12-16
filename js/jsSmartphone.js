@@ -9,7 +9,7 @@ var intentos = 1;
 var modeloNave=1;
 var modeloLuna=1;
 
-window.onload = function(){
+window.onload = function arrancarJuego(){
 	/*
     document.getElementById("showm").onclick = function () {
 		document.getElementsByClassName("c")[0].style.display = "block";
@@ -19,7 +19,7 @@ window.onload = function(){
 		document.getElementsByClassName("c")[0].style.display = "none";
 		start();
 	}*/
-	alert("HE CAMBIADO A VERSION SMARTPHONE")
+
 	//CAMBIAR LA IMAGEN DE LA LUNA
 	document.getElementById("modeloLuna").onclick = function cambiarModeloLuna(){
 		switch(modeloLuna) {
@@ -190,13 +190,34 @@ function reanudar() {
 	start();
 	document.getElementById("reanudar").style.display="none";
 	document.getElementById("pausa").style.display="inline-block";
+	document.getElementById("reinicia").style.display="none";
+	document.getElementById("instrucciones").style.display="none";
+	document.getElementById("botonAjustes").style.display="none";
+	document.getElementById('izquierda').style.display="inline-block";
+	document.getElementById('nave').style.display="inline-block";
+	document.getElementById('zonaAterrizaje').style.display="inline-block";
+	document.getElementById('derecha').style.backgroundImage='url(img/sol.png)';
+	document.getElementById('derecha').style.backgroundSize='60%';
+	document.getElementById('derecha').style.backgroundRepeat='no-repeat';
+	document.getElementById('derecha').style.width='35%';
+
 }
 function pausar() {
 	stop();
 	document.getElementById("pausa").style.display="none";
 	document.getElementById("reanudar").style.display="inline-block";
+	document.getElementById("reinicia").style.display="inline-block";
+	document.getElementById("instrucciones").style.display="inline-block";
+	document.getElementById("botonAjustes").style.display="inline-block";
+	document.getElementById('izquierda').style.display="none";
+	document.getElementById('nave').style.display="none";
+	document.getElementById('zonaAterrizaje').style.display="none";
+	document.getElementById('derecha').style.backgroundImage='url(img/fondo_menu.jpg)';
+	document.getElementById('derecha').style.backgroundSize='auto';
+	document.getElementById('derecha').style.backgroundRepeat='repeat';
+	document.getElementById('derecha').style.width='100%';
+	 	
 }
-
 function reiniciarJuego() {
 	stop();
 	document.getElementById("reanudar").style.display="none";
@@ -209,6 +230,7 @@ function reiniciarJuego() {
 	dt = 0.016683;
 	gasolina=100;
 	document.getElementById("fuel").style.color="black";
+	reanudar();
 	clearInterval(timer);
 	start();
 	document.getElementById("intentos").innerHTML=intentos;
