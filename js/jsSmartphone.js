@@ -8,6 +8,7 @@ var gasolina=100;
 var intentos = 1;
 var modeloNave=1;
 var modeloLuna=1;
+var timerFuel=null;
 
 window.onload = function arrancarJuego(){
 	/*
@@ -19,34 +20,7 @@ window.onload = function arrancarJuego(){
 		document.getElementsByClassName("c")[0].style.display = "none";
 		start();
 	}*/
-/*
-window.addEventListener('load', function(){
-    var box1 = document.getElementById('botonOn')
-    //var statusdiv = document.getElementById('statusdiv')
-    //var startx = 0
-    //var dist = 0
-    box1.addEventListener('touchstart', function(e){
-        var touchobj = e.changedTouches[0]; // reference first touch point (ie: first finger)
-       // startx = parseInt(touchobj.clientX) // get x position of touch point relative to left edge of browser
-        //statusdiv.innerHTML = 'Status: touchstart<br> ClientX: ' + startx + 'px'
-        encenderMotor();
-        e.preventDefault();
-    }, false)
 
-    //box1.addEventListener('touchmove', function(e){
-    //   var touchobj = e.changedTouches[0] // reference first touch point for this event
-    //    var dist = parseInt(touchobj.clientX) - startx
-    //    statusdiv.innerHTML = 'Status: touchmove<br> Horizontal distance traveled: ' + dist + 'px'
-    //    e.preventDefault()
-    //}, false)
-    box1.addEventListener('touchend', function(e){
-        var touchobj = e.changedTouches[0]; // reference first touch point for this event
-        //statusdiv.innerHTML = 'Status: touchend<br> Resting x coordinate: ' + touchobj.clientX + 'px'
-        apagarMotor();
-        e.preventDefault();
-    }, false)
-}, false)
-*/
 
 
 
@@ -95,6 +69,9 @@ theElement.addEventListener("touchstart", handlerFunction, false);
 theElement.addEventListener("touchend", endingFunction, false);
 //theElement.addEventListener("touchend", apagarMotor);
 function handlerFunction(event) {
+	function () {
+		while ()
+	}
 	encenderMotor();
 }
 function endingFunction(event) {
@@ -189,19 +166,29 @@ function finalizarJuego() {
 
 function encenderMotor() {
 	a=-g;
-	gasolina--;
+	//gasolina--;
 	document.getElementById("fuel").innerHTML=gasolina;
 	document.getElementById("fuel").style.color="rgb(" + (320-gasolina*3) + ", 0, 0)";
 	document.getElementById("imgMotor").style.display="block";
+	if (timerFuel==null) { 
+			timerFuel=setInterval(function(){ actualizarGasolina(); }, 100);
+			}
 	if (gasolina<=0) {
 			apagarMotor();
 			document.getElementById("fuel").innerHTML=0;
 		}
 }
 
+function actualizarGasolina(){
+	gasolina-=1;
+	document.getElementById("fuel").innerHTML=gasolina;	
+}
+
 function apagarMotor() {
 	a=g;
 	document.getElementById("imgMotor").style.display="none";
+	clearInterval(timerFuel);
+	timerFuel=null;
 }
 
 function mostrarAjustes() {
