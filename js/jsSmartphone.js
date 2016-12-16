@@ -69,9 +69,6 @@ theElement.addEventListener("touchstart", handlerFunction, false);
 theElement.addEventListener("touchend", endingFunction, false);
 //theElement.addEventListener("touchend", apagarMotor);
 function handlerFunction(event) {
-	function () {
-		while ()
-	}
 	encenderMotor();
 }
 function endingFunction(event) {
