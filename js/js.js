@@ -273,10 +273,10 @@ function reanudarSmartphone() {
 	document.getElementById('izquierda').style.display="inline-block";
 	document.getElementById('nave').style.display="inline-block";
 	document.getElementById('zonaAterrizaje').style.display="inline-block";
-	document.getElementById('derecha').style.backgroundImage='url(img/sol.png)';
-	document.getElementById('derecha').style.backgroundSize='60%';
-	document.getElementById('derecha').style.backgroundRepeat='no-repeat';
-	document.getElementById('derecha').style.width='35%';
+	document.getElementById('derechaSmartphone').style.backgroundImage='url(img/sol.png)';
+	document.getElementById('derechaSmartphone').style.backgroundSize='60%';
+	document.getElementById('derechaSmartphone').style.backgroundRepeat='no-repeat';
+	document.getElementById('derechaSmartphone').style.width='35%';
 }
 
 function pausarSmartphone() {
@@ -289,10 +289,10 @@ function pausarSmartphone() {
 	document.getElementById('izquierda').style.display="none";
 	document.getElementById('nave').style.display="none";
 	document.getElementById('zonaAterrizaje').style.display="none";
-	document.getElementById('derecha').style.backgroundImage='url(img/fondo_menu.jpg)';
-	document.getElementById('derecha').style.backgroundSize='auto';
-	document.getElementById('derecha').style.backgroundRepeat='repeat';
-	document.getElementById('derecha').style.width='100%'; 	
+	document.getElementById('derechaSmartphone').style.backgroundImage='url(img/fondo_menu.jpg)';
+	document.getElementById('derechaSmartphone').style.backgroundSize='auto';
+	document.getElementById('derechaSmartphone').style.backgroundRepeat='repeat';
+	document.getElementById('derechaSmartphone').style.width='100%'; 	
 }
 
 function reiniciarJuegoSmartphone() {

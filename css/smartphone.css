@@ -47,6 +47,9 @@
 #botonOn:active {border-style: inset; background-color: #2E8B57;}
 
 #derecha{
+display: none;
+}
+#derechaSmartphone{
 	background-image: url("../img/sol.png");
 	background-repeat: no-repeat;
 	background-position: right; 

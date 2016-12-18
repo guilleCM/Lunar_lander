@@ -6,8 +6,8 @@
  <meta name="description" content="Minijuego Lunar Lander con html, css, y JavaScript">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
- <link rel='stylesheet' media='screen and (min-width: 601px)' href='css/responsive.css'>
- <link rel='stylesheet' media='screen and (max-width: 600px)' href='css/smartphone.css'>
+ <link rel='stylesheet' media='screen and (min-device-width: 601px)' href='css/responsive.css'>
+ <link rel='stylesheet' media='screen and (max-device-width: 600px)' href='css/smartphone.css'>
  
  <script src="js/js.js"></script>
 </head>
@@ -29,17 +29,20 @@
 
 <div id="zonaAterrizaje"><img src="img/luna.png" alt="luna" id="luna"></div>
 
+<div id="derechaSmartphone">
+		<a href="#" onclick="reanudarSmartphone();"><div id="reanudaSmartphone"><p>Play</p></div></a>
+		<a href="#" onclick="pausarSmartphone();"><div id="pausaSmartphone">Pausar</div></a>
+		<a href="#" onclick="reiniciarJuegoSmartphone();"><div id="reiniciaSmartphone"><p>Reiniciar</p></div></a>
+		<a href="#" onclick="mostrarInstruccionesSmartphone();"><div id="ayudaSmartphone"><p>Ayuda</p></div></a>
+		<a href="#" onclick="mostrarAjustesSmartphone();"><div id="botonAjustesSmartphone"><p>Ajustes</p></div></a>
+</div>
+
 <div id="derecha">
 		<a href="#" onclick="reanudar();"><div id="reanudar"><p>Play</p></div></a>
-		<a href="#" onclick="reanudarSmartphone();"><div id="reanudaSmartphone"><p>Play</p></div></a>
 		<a href="#" onclick="pausar();"><div id="pausa">Pausar</div></a>
-		<a href="#" onclick="pausarSmartphone();"><div id="pausaSmartphone">Pausar</div></a>
 		<a href="#" onclick="reiniciarJuego();"><div id="reinicia"><p>Reiniciar</p></div></a>
-		<a href="#" onclick="reiniciarJuegoSmartphone();"><div id="reiniciaSmartphone"><p>Reiniciar</p></div></a>		
 		<a href="#" onclick="mostrarInstrucciones();"><div id="instrucciones"><p>Ayuda</p></div></a>
-		<a href="#" onclick="mostrarInstruccionesSmartphone();"><div id="ayudaSmartphone"><p>Ayuda</p></div></a>
 		<a href="#" onclick="mostrarAjustes();"><div id="botonAjustes"><p>Ajustes</p></div></a>
-		<a href="#" onclick="mostrarAjustesSmartphone();"><div id="botonAjustesSmartphone"><p>Ajustes</p></div></a>
 </div>
 
 <div id="gameOver">

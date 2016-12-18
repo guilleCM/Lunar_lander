@@ -26,23 +26,10 @@
 	margin-bottom: 15px;
 }
 #botonOn{
-	display: inline-block;
-	border-style: outset;
-	border-color: #2E8B57;
-	background-color: #00FA9A;
-	margin: 10px;
-	margin-top: 5%;
-	color: black;
-	width: 70px;
-	height: 70px;
-	background-image: url("../img/propulsor.png");
-	background-repeat: no-repeat;
-	background-size: 80%;
-	background-position: 50% 50%;
-	text-align: center;
+	display: none;
 }
-#botonOn:hover {background-color: #2E8B57;}
-#botonOn:active {border-style: inset;}
+
+#derechaSmartphone{display: none;}
 
 #derecha{
 	background-image: url("../img/sol.png");
