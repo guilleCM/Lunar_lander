@@ -5,12 +5,39 @@ var a = g; //a= -g es para motor encendido
 var dt = 0.016683;
 var timer;
 var gasolina=100;
+var dificultad=1;
+var gasolinaTotal=100
 var intentos = 1;
 var modeloNave=1;
 var modeloLuna=1;
 var timerFuel=null;
 
 window.onload = function arrancarJuego(){
+	
+	//CAMBIAR LA DIFICULTAD DEL JUEGO
+	document.getElementById("dificultad").onclick = function cambiarDificultad(){
+		switch(dificultad){
+			case 1:
+				gasolina=50;
+				gasolinaTotal=50;
+				document.getElementById("dificultad").innerHTML="Media";
+				dificultad=2
+				break;
+			case 2:
+				gasolina=25;
+				gasolinaTotal=35;
+				document.getElementById("dificultad").innerHTML="Difícil";
+				dificultad=3
+				break;
+			case 3:
+				gasolina=100;
+				gasolinaTotal=100;
+				document.getElementById("dificultad").innerHTML="Fácil";
+				dificultad=1
+				break;
+			}
+		}
+
 	//CAMBIAR LA IMAGEN DE LA LUNA
 	document.getElementById("modeloLuna").onclick = function cambiarModeloLuna(){
 		switch(modeloLuna) {
@@ -138,8 +165,8 @@ function finalizarJuego() {
 //FUNCION QUE ACTUA EN CUANTO SE ENCIENDE EL MOTOR
 function encenderMotor() {
 	a=-g;
-	document.getElementById("fuel").innerHTML=gasolina;
-	document.getElementById("fuel").style.color="rgb("+0+(100-gasolina)+"%, 0%, 0%)";
+	document.getElementById("fuel").innerHTML=porcentajeGasolina();
+	document.getElementById("fuel").style.color="rgb("+0+(100-porcentajeGasolina())+"%, 0%, 0%)";
 	document.getElementById("imgMotor").style.display="block";
 	if (timerFuel==null) { 
 			timerFuel=setInterval(function(){ actualizarGasolina(); }, 100);
@@ -149,11 +176,19 @@ function encenderMotor() {
 			document.getElementById("fuel").innerHTML=0;
 		}
 }
+
+//CALCULO EL PORCENTAJE DE GASOLINA QUE QUEDA
+function porcentajeGasolina() {
+  var result= gasolina * 100 / gasolinaTotal;
+  return result.toFixed(0);
+}
+
+
 //FUNCION QUE ACTUALIZA EL MARCADOR DE FUEL
 function actualizarGasolina(){
 	gasolina-=1;
-	document.getElementById("fuel").innerHTML=gasolina;
-	document.getElementById("fuel").style.color="rgb("+0+(100-gasolina)+"%, 0%, 0%)";
+	document.getElementById("fuel").innerHTML=porcentajeGasolina();
+	document.getElementById("fuel").style.color="rgb("+0+(100-porcentajeGasolina())+"%, 0%, 0%)";
 	if (gasolina<=0) {
 		apagarMotor();
 		document.getElementById("fuel").innerHTML=0;
@@ -199,7 +234,8 @@ function reiniciarJuego() {
 	g = 1.622;
 	a = g;
 	dt = 0.016683;
-	gasolina=100;
+	gasolina=gasolinaTotal;
+	document.getElementById("fuel").innerHTML=porcentajeGasolina();
 	document.getElementById("fuel").style.color="black";
 	reanudar();
 	clearInterval(timer);
@@ -208,7 +244,6 @@ function reiniciarJuego() {
 	document.getElementById("intentos").innerHTML=intentos;
 	document.getElementById("gameOver").style.display="none";
 	document.getElementById("userWin").style.display="none";
-	document.getElementById("fuel").innerHTML=gasolina;
 	if (modeloNave==1) {
 		document.getElementById("imgNave").src="img/nave.png";
 	} else {
@@ -268,7 +303,8 @@ function reiniciarJuegoSmartphone() {
 	g = 1.622;
 	a = g;
 	dt = 0.016683;
-	gasolina=100;
+	gasolina=gasolinaTotal;
+	document.getElementById("fuel").innerHTML=porcentajeGasolina();
 	document.getElementById("fuel").style.color="black";
 	reanudarSmartphone();
 	clearInterval(timer);
@@ -277,7 +313,6 @@ function reiniciarJuegoSmartphone() {
 	document.getElementById("intentos").innerHTML=intentos;
 	document.getElementById("gameOver").style.display="none";
 	document.getElementById("userWin").style.display="none";
-	document.getElementById("fuel").innerHTML=gasolina;
 	if (modeloNave==1) {
 		document.getElementById("imgNave").src="img/nave.png";
 	} else {
