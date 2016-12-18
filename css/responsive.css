@@ -160,11 +160,7 @@
 	margin-top: 0px;
 }
 
-#reanudaSmartphone {display: none;}
-#pausaSmartphone {display: none;}
-#reiniciaSmartphone {display: none;}
-#ayudaSmartphone {display: none;}
-#botonAjustesSmartphone {display: none;}
+#derechaSmartphone {display: none;}
 
 #settings{
 	display: none;
@@ -175,6 +171,10 @@
 	width: 80%;
 	left: 10%;
 	top: 10%;
+}
+#dificultad {
+	padding: 10px;
+	font-size: 120%;
 }
 #modeloLuna {
 	padding: 10px;
@@ -201,7 +201,7 @@
 	background-color:#00FA9A;
 	border-style: solid;
 	border-color: #2E8B57;
-	width: 5%;
+	width: 15%;
 	max-width: 50px;
 	position: absolute;
 	top: 2px;

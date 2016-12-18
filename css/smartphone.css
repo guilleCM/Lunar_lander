@@ -46,9 +46,7 @@
 }
 #botonOn:active {border-style: inset; background-color: #2E8B57;}
 
-#derecha{
-display: none;
-}
+#derecha{display: none;}
 #derechaSmartphone{
 	background-image: url("../img/sol.png");
 	background-repeat: no-repeat;
@@ -152,12 +150,6 @@ display: none;
 	background-position: 7px 50%;
 	pointer-events: auto;
 }
-
-#reanudar {display: none;}
-#pausa {display: none;}
-#reinicia {display: none;}
-#instrucciones {display: none;}
-#botonAjustes {display: none;}
 
 #settings{
 	display: none;
