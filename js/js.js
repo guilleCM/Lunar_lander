@@ -13,7 +13,23 @@ var modeloLuna=1;
 var timerFuel=null;
 
 window.onload = function arrancarJuego(){
-	
+	//CAPTURANDO EVENTOS DEL PANEL DERECHA
+	document.getElementById("reanudar").onclick=function(){reanudar();};
+	document.getElementById("pausa").onclick=function(){pausar();};
+	document.getElementById("reinicia").onclick=function(){reiniciarJuego();};
+	document.getElementById("instrucciones").onclick=function(){mostrarInstrucciones();};
+	document.getElementById("botonAjustes").onclick=function(){mostrarAjustes();};
+	//CAPTURANDO EVENTOS PARA EL PANEL DERECHO EN SMARTPHONE
+	document.getElementById("reanudaSmartphone").onclick=function(){reanudarSmartphone();};
+	document.getElementById("pausaSmartphone").onclick=function(){pausarSmartphone();};
+	document.getElementById("reiniciaSmartphone").onclick=function(){reiniciarJuegoSmartphone();};
+	document.getElementById("ayudaSmartphone").onclick=function(){mostrarInstruccionesSmartphone();};
+	document.getElementById("botonAjustesSmartphone").onclick=function(){mostrarAjustesSmartphone();};	
+	//EVENTOS DE FIN DEL JUEGO
+	document.getElementById("jugarOtraVez").onclick=function(){reiniciarJuego();};
+	document.getElementById("jugarOtraVezSmartphone").onclick=function(){reiniciaSmartphone();};	
+	document.getElementById("jugarAgain").onclick=function(){reiniciarJuego();};
+	document.getElementById("jugarAgainSmartphone").onclick=function(){reiniciaSmartphone();};
 	//CAMBIAR LA DIFICULTAD DEL JUEGO
 	document.getElementById("dificultad").onclick = function cambiarDificultad(){
 		switch(dificultad){
@@ -137,7 +153,6 @@ function eventosOn() {
 	document.getElementById("izquierda").style.pointerEvents='auto';
 	document.getElementById("derecha").style.pointerEvents='auto';
 }
-
 
 //FUNCION PARA ACABAR EL JUEGO
 function finalizarJuego() {
