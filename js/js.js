@@ -27,9 +27,9 @@ window.onload = function arrancarJuego(){
 	document.getElementById("botonAjustesSmartphone").onclick=function(){mostrarAjustesSmartphone();};	
 	//EVENTOS DE FIN DEL JUEGO
 	document.getElementById("jugarOtraVez").onclick=function(){reiniciarJuego();};
-	document.getElementById("jugarOtraVezSmartphone").onclick=function(){reiniciaSmartphone();};	
+	document.getElementById("jugarOtraVezSmartphone").onclick=function(){reiniciarJuegoSmartphone();};	
 	document.getElementById("jugarAgain").onclick=function(){reiniciarJuego();};
-	document.getElementById("jugarAgainSmartphone").onclick=function(){reiniciaSmartphone();};
+	document.getElementById("jugarAgainSmartphone").onclick=function(){reiniciarJuegoSmartphone();};
 	//CAMBIAR LA DIFICULTAD DEL JUEGO
 	document.getElementById("dificultad").onclick = function cambiarDificultad(){
 		switch(dificultad){
