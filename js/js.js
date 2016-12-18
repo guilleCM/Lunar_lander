@@ -139,7 +139,7 @@ function finalizarJuego() {
 function encenderMotor() {
 	a=-g;
 	document.getElementById("fuel").innerHTML=gasolina;
-	document.getElementById("fuel").style.color="rgb(" + (320-gasolina*3) + ", 0, 0)";
+	document.getElementById("fuel").style.color="rgb("+0+(100-gasolina)+"%, 0%, 0%)";
 	document.getElementById("imgMotor").style.display="block";
 	if (timerFuel==null) { 
 			timerFuel=setInterval(function(){ actualizarGasolina(); }, 100);
@@ -153,7 +153,7 @@ function encenderMotor() {
 function actualizarGasolina(){
 	gasolina-=1;
 	document.getElementById("fuel").innerHTML=gasolina;
-	document.getElementById("fuel").style.color="rgb(" + (320-gasolina*3) + ", 0, 0)";
+	document.getElementById("fuel").style.color="rgb("+0+(100-gasolina)+"%, 0%, 0%)";
 	if (gasolina<=0) {
 		apagarMotor();
 		document.getElementById("fuel").innerHTML=0;
