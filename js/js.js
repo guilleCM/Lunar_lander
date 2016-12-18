@@ -48,19 +48,17 @@ window.onload = function arrancarJuego(){
 	//Empezar a mover nave
 	start();
 
-	//EVENTOS ONCLICK (botonON) PARA VERSION ESCRITORIO
-	var botonOnClick = document.getElementById("botonOn");
-	botonOnClick.addEventListener("mousedown", handlerFunction, false);
-	botonOnClick.addEventListener("whilemousedown", handlerFunction, false);
-	botonOnClick.addEventListener("mouseup", endingFunction, false);
-	botonOnClick.addEventListener("mouseout", endingFunction, false);
-
+	//ASIGNAR EVENTOS TOUCH SCREEN PARA LA VERSION SMARTPHONE
+	var botonOnSmartphone = document.getElementById("botonOn");
+	botonOnSmartphone.addEventListener("touchstart", handlerFunction, false);
+	botonOnSmartphone.addEventListener("touchend", endingFunction, false);
 	function handlerFunction(event) {
 		encenderMotor();
 	}
 	function endingFunction(event) {
 		apagarMotor();
 	}
+	
 	//CON TECLADO (tecla ESPACIO)
 	window.onkeydown=function(e) {
 		var claveTecla;
@@ -73,6 +71,7 @@ window.onload = function arrancarJuego(){
 			}
 	}
 	window.onkeyup=apagarMotor;
+
 }//TERMINA EL WINDOW.ONLOAD
 
 
@@ -92,33 +91,47 @@ function moverNave(){
 	document.getElementById("velocidad").innerHTML=v.toFixed(2);
 	y +=v*dt;
 	document.getElementById("altura").innerHTML=y.toFixed(2);
-
 	//mover hasta que top sea un 70% de la pantalla
 	if (y<70){ 
 		document.getElementById("nave").style.top = y+"%"; 
 	} else { 
 		stop();
 		finalizarJuego();
-		}	
+	}	
 }
+
+//HACER QUE LOS DIVS IZQUIERDA Y DERECHA NO RECIBAN EVENTOS ONCLICK
+function eventosOff() {
+	document.getElementById("izquierda").style.pointerEvents='none';
+	document.getElementById("derecha").style.pointerEvents='none';
+}
+//HACER QUE LOS DIVS IZQUIERDA Y DERECHA SI RECIBAN EVENTOS ONCLICK
+function eventosOn() {
+	document.getElementById("izquierda").style.pointerEvents='auto';
+	document.getElementById("derecha").style.pointerEvents='auto';
+}
+
 
 //FUNCION PARA ACABAR EL JUEGO
 function finalizarJuego() {
 	if (v>5) {
 		switch (modeloNave) {
 			case 1:
+			eventosOff();
 			document.getElementById("imgNave").src="img/nave_rota.gif";
 			document.getElementById("gameOver").style.display="block";
 			document.getElementById("intentos").innerHTML=intentos;
 			break;
 			case 2:
+			eventosOff();
 			document.getElementById("imgNave").src="img/mod2rota.gif";
 			document.getElementById("gameOver").style.display="block";
 			document.getElementById("intentos").innerHTML=intentos;
 			break;
 			}
 		} else {
-			document.getElementById("userWin").style.display="block";	
+			document.getElementById("userWin").style.display="block";
+			eventosOff();	
 		}
 }
 
@@ -156,21 +169,26 @@ function apagarMotor() {
 
 function mostrarAjustes() {
 	pausar();
+	eventosOff();
 	document.getElementById("settings").style.display="block";
 }
 function ocultarAjustes() {
 	document.getElementById("settings").style.display="none";
+	eventosOn();
 }
 
 function mostrarInstrucciones() {
 	pausar();
+	eventosOff();
 	document.getElementById("menuInstrucciones").style.display="block";
 }
 
 function ocultarInstrucciones() {
     document.getElementById("menuInstrucciones").style.display="none";
+    eventosOn();
 }
 
+//OJO COMPORTAMIENTO ESCRITORIO
 function reiniciarJuego() {
 	stop();
 	document.getElementById("reanudar").style.display="none";
@@ -183,8 +201,10 @@ function reiniciarJuego() {
 	dt = 0.016683;
 	gasolina=100;
 	document.getElementById("fuel").style.color="black";
+	reanudar();
 	clearInterval(timer);
 	start();
+	eventosOn();
 	document.getElementById("intentos").innerHTML=intentos;
 	document.getElementById("gameOver").style.display="none";
 	document.getElementById("userWin").style.display="none";
@@ -196,7 +216,6 @@ function reiniciarJuego() {
 	}
 }
 
-//OJO DISTINTO DE SMARTPHONE
 function reanudar() {
 	start();
 	document.getElementById("reanudar").style.display="none";
@@ -208,5 +227,72 @@ function pausar() {
 	document.getElementById("reanudar").style.display="inline-block";
 }
 
+//OJO COMPORTAMIENTO SMARTPHONE
+function reanudarSmartphone() {
+	start();
+	document.getElementById("reanudaSmartphone").style.display="none";
+	document.getElementById("pausaSmartphone").style.display="inline-block";
+	document.getElementById("reiniciaSmartphone").style.display="none";
+	document.getElementById("ayudaSmartphone").style.display="none";
+	document.getElementById("botonAjustesSmartphone").style.display="none";
+	document.getElementById('izquierda').style.display="inline-block";
+	document.getElementById('nave').style.display="inline-block";
+	document.getElementById('zonaAterrizaje').style.display="inline-block";
+	document.getElementById('derecha').style.backgroundImage='url(img/sol.png)';
+	document.getElementById('derecha').style.backgroundSize='60%';
+	document.getElementById('derecha').style.backgroundRepeat='no-repeat';
+	document.getElementById('derecha').style.width='35%';
+}
+
+function pausarSmartphone() {
+	stop();
+	document.getElementById("pausaSmartphone").style.display="none";
+	document.getElementById("reanudaSmartphone").style.display="inline-block";
+	document.getElementById("reiniciaSmartphone").style.display="inline-block";
+	document.getElementById("ayudaSmartphone").style.display="inline-block";
+	document.getElementById("botonAjustesSmartphone").style.display="inline-block";
+	document.getElementById('izquierda').style.display="none";
+	document.getElementById('nave').style.display="none";
+	document.getElementById('zonaAterrizaje').style.display="none";
+	document.getElementById('derecha').style.backgroundImage='url(img/fondo_menu.jpg)';
+	document.getElementById('derecha').style.backgroundSize='auto';
+	document.getElementById('derecha').style.backgroundRepeat='repeat';
+	document.getElementById('derecha').style.width='100%'; 	
+}
+
+function reiniciarJuegoSmartphone() {
+	stop();
+	intentos++;
+	y = 5; // altura inicial y0=10%, debe leerse al iniciar si queremos que tenga alturas diferentes dependiendo del dispositivo
+	v = 0;
+	g = 1.622;
+	a = g;
+	dt = 0.016683;
+	gasolina=100;
+	document.getElementById("fuel").style.color="black";
+	reanudarSmartphone();
+	clearInterval(timer);
+	start();
+	eventosOn();
+	document.getElementById("intentos").innerHTML=intentos;
+	document.getElementById("gameOver").style.display="none";
+	document.getElementById("userWin").style.display="none";
+	document.getElementById("fuel").innerHTML=gasolina;
+	if (modeloNave==1) {
+		document.getElementById("imgNave").src="img/nave.png";
+	} else {
+		document.getElementById("imgNave").src="img/mod2nave.gif";
+	}
+}
+
+function mostrarAjustesSmartphone() {
+	pausarSmartphone();
+	document.getElementById("settings").style.display="block";
+}
+
+function mostrarInstruccionesSmartphone() {
+	pausarSmartphone();
+	document.getElementById("menuInstrucciones").style.display="block";
+}
 
 

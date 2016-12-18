@@ -3,7 +3,6 @@
 	background-image: url("../img/fondo.png");
 	font-family: Arial;
 }
-
 #izquierda{
 	display: inline-block; 
 	width: 30%;
@@ -26,7 +25,6 @@
 	padding: 2px;
 	margin-bottom: 15px;
 }
-
 #botonOn{
 	display: inline-block;
 	border-style: outset;
@@ -46,7 +44,6 @@
 #botonOn:hover {background-color: #2E8B57;}
 #botonOn:active {border-style: inset;}
 
-
 #derecha{
 	background-image: url("../img/sol.png");
 	background-repeat: no-repeat;
@@ -54,8 +51,7 @@
 	background-size: 30%;
 	display:block !important;
 	pointer-events: auto;
-}
-#derecha{display:inline-block;width:35%;height:100%;
+	width:35%; height:100%;
 	position: fixed; right: 0px;
 }
 
@@ -176,6 +172,13 @@
 #botonAjustes p {
 	margin-top: 0px;
 }
+
+#reanudaSmartphone {display: none;}
+#pausaSmartphone {display: none;}
+#reiniciaSmartphone {display: none;}
+#ayudaSmartphone {display: none;}
+#botonAjustesSmartphone {display: none;}
+
 #settings{
 	display: none;
 	background-image: url("../img/fondo_instrucciones.jpg");
@@ -270,10 +273,5 @@
 	left: 10%;
 	top: 10%;
 }
-#intentos {
-}
-
-#cpanel{}
-#hidem,#showm{display:none}
-
-#showMenu{display: none;}
+#jugarOtraVezSmartphone{display: none;}
+#jugarAgainSmartphone{display: none;}
