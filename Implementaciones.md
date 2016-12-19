@@ -21,3 +21,4 @@
  ![fuel](https://github.com/guilleCM/Lunar_lander/blob/master/img/fuel-min.jpg)
 - [x] Al finalizar el juego, si el jugador no consigue superar la partida se le indicará cuantos intentos ha utilizado.
 - [x] El juego dispone en el html de un código que cargará el css en función del dispositivo que se utilice. Para escritorio siempre aplicará el css responsive que se ajusta a cualquier tamaño y recibe eventos ONCLICK y con TECLADO. Sin embargo para la versión Smartphone he decidido cargar otro css que recibe solo eventos ONTOUCH (que responde mejor al comportamiento del móvil).
+- [x] Añadida rama minified (comprimida al máximo) del proyecto. Se ha reducido de 600kB a 200kB (66,6% aprox.) el peso del proyecto. [Puedes acceder aquí](https://github.com/guilleCM/Lunar_lander/tree/minified)
