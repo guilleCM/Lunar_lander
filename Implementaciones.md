@@ -10,10 +10,10 @@
 ## Tareas extras:
 - [x] Creado apartado Configuración en el menú del juego. Esta herramienta permite al jugador:  
  - Elegir dificultad del juego. El jugador dispone de tres niveles de combustible: Fácil (100litros), Medio (50litros) y Difícil (35litros).
- - Cambiar modelo de la nave (cada una con su respectiva animación de motor y en estado destruida).
+ - Cambiar modelo de la nave (cada una con su respectiva animación de motor y en estado destruida).  
  ![modelo nave 2](https://github.com/guilleCM/Lunar_lander/blob/master/img/mod2nave.gif)
  ![modelo nave 1](https://github.com/guilleCM/Lunar_lander/blob/master/img/nave.png)
- - Cambiar el color de la luna.
+ - Cambiar el color de la luna.  
  ![modelo luna](https://github.com/guilleCM/Lunar_lander/blob/master/img/luna.png)
  ![modelo luna2](https://github.com/guilleCM/Lunar_lander/blob/master/img/mod2luna.png)
 - [x] El medidor de fuel (expresado en tanto por ciento restante %) degrada el color a rojo en función del fuel que queda. Con el tanque vacio (0%) el indicador aparece en rojo.
