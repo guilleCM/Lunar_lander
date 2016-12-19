@@ -9,9 +9,13 @@
 
 ## Tareas extras:
 - [x] Creado apartado Configuración en el menú del juego. Esta herramienta permite al jugador:  
- - Elegir dificultad del juego. El jugador dispone de tres niveles de combustible (Fácil=100litros, Medio=50litros, Difícil=35litros)
- - Cambiar modelo de la nave.
+ - Elegir dificultad del juego. El jugador dispone de tres niveles de combustible: Fácil (100litros), Medio (50litros) y Difícil (35litros).
+ - Cambiar modelo de la nave (cada una con su respectiva animación de motor y en estado destruida).
+ ![modelo nave 2](https://github.com/guilleCM/Lunar_lander/blob/master/img/mod2nave.gif)
+ ![modelo nave 1](https://github.com/guilleCM/Lunar_lander/blob/master/img/nave.png)
  - Cambiar el color de la luna.
+ ![modelo luna](https://github.com/guilleCM/Lunar_lander/blob/master/img/luna.png)
+ ![modelo luna2](https://github.com/guilleCM/Lunar_lander/blob/master/img/mod2luna.png)
 - [x] El medidor de fuel (expresado en tanto por ciento restante %) degrada el color a rojo en función del fuel que queda. Con el tanque vacio (0%) el indicador aparece en rojo.
 - [x] Al finalizar el juego, si el jugador no consigue superar la partida se le indicará cuantos intentos ha utilizado.
-- [x] El juego dispone en el html de un código que cargará el css en función del dispositivo que se utilice. Para escritorio siempre aplicará el css responsive que se ajusta a cualquier tamaño y recibe eventos ONCLICK y con TECLADO. Sin embargo para la versión Smartphone he decidido cargar otro css que recibe solo eventos ontouch.
+- [x] El juego dispone en el html de un código que cargará el css en función del dispositivo que se utilice. Para escritorio siempre aplicará el css responsive que se ajusta a cualquier tamaño y recibe eventos ONCLICK y con TECLADO. Sin embargo para la versión Smartphone he decidido cargar otro css que recibe solo eventos ONTOUCH (que responde mejor al comportamiento del móvil).
