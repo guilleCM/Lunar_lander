@@ -11,6 +11,7 @@ body {
 button {
 	background-color: #00FA9A;
 	font-family: Arial;
+	min-height: 70px;
 }
 #volver {
 	text-align: center;

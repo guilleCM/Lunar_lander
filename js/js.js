@@ -13,7 +13,7 @@ var modeloLuna=1;
 var timerFuel=null;
 
 window.onload = function arrancarJuego(){
-
+	//CAPTURA SI EL DISPOSITIVO RECIBE EVENTOS OUNTOUCH (SMARTPHONE)
 	function is_touch_device() {
 	if ('ontouchstart' in window) {document.getElementById("srcCSS").href="css/smartphone.css";}		
 	}
