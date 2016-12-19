@@ -13,6 +13,9 @@ var modeloLuna=1;
 var timerFuel=null;
 
 window.onload = function arrancarJuego(){
+
+	is_touch_device;
+
 	//CAPTURANDO EVENTOS DEL PANEL DERECHA
 	document.getElementById("reanudar").onclick=function(){reanudar();};
 	document.getElementById("pausa").onclick=function(){pausar();};
@@ -345,4 +348,10 @@ function mostrarInstruccionesSmartphone() {
 	document.getElementById("menuInstrucciones").style.display="block";
 }
 
-
+function is_touch_device() {
+if (('ontouchstart' in window) ||     // Advanced test for touch events
+   (window.DocumentTouch && document instanceof DocumentTouch) ||
+   ((hash['touch'] && hash['touch'].offsetTop) === 9)) {
+	document.getElementById("srcCSS").href="css/smartphone.css";	
+	}
+}
