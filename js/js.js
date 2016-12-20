@@ -15,7 +15,7 @@ var timerFuel=null;
 window.onload = function arrancarJuego(){
 	//CAPTURA SI EL DISPOSITIVO RECIBE EVENTOS OUNTOUCH (SMARTPHONE)
 	function is_touch_device() {
-	if ('ontouchstart' in window) {document.getElementById("srcCSS").href="css/smartphone.css";}		
+	if ('ontouchstart' in window) {document.getElementById("botonOn").style.display="inline-block";}		
 	}
 	is_touch_device();
 	//CAPTURANDO EVENTOS DEL PANEL DERECHA

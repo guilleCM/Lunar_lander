@@ -29,7 +29,7 @@
 }
 
 #botonOn{
-	display: inline-block;
+	display: none;
 	border-style: outset;
 	border-color: #2E8B57;
 	background-color: #00FA9A;
@@ -64,6 +64,7 @@
 #ayudaSmartphone:active {border-style: inset;background-color: #2E8B57;}
 #botonAjustesSmartphone:active {border-style: inset;background-color: #2E8B57;}
 #close:active {border-style: inset;background-color: #2E8B57;}
+#pausaSmartphone:hover {background-color: #2E8B57;font-size: 100%;}
 
 #reanudaSmartphone {
 	border-style: outset;
