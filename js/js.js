@@ -43,18 +43,21 @@ window.onload = function arrancarJuego(){
 				gasolinaTotal=50;
 				document.getElementById("dificultad").innerHTML="Media";
 				dificultad=2
+				restart();
 				break;
 			case 2:
 				gasolina=25;
 				gasolinaTotal=35;
 				document.getElementById("dificultad").innerHTML="Difícil";
 				dificultad=3
+				restart();
 				break;
 			case 3:
 				gasolina=100;
 				gasolinaTotal=100;
 				document.getElementById("dificultad").innerHTML="Fácil";
 				dificultad=1
+				restart();
 				break;
 			}
 		}
@@ -83,12 +86,14 @@ window.onload = function arrancarJuego(){
 				document.getElementById("imgMotor").src="img/mod2motor.gif";
 				document.getElementById("modeloNave").innerHTML="Modelo PodRacer";
 				modeloNave=2;
+				restart();
 				break;
 			case 2:
 				document.getElementById("imgNave").src="img/nave.png";
 				document.getElementById("imgMotor").src="img/motor.gif";
 				document.getElementById("modeloNave").innerHTML="Modelo Estándar";
 				modeloNave=1;
+				restart();
 				break;
 			}
 		}
@@ -243,6 +248,17 @@ function ocultarInstrucciones() {
     eventosOn();
 }
 
+function restart(){
+	stop();
+	y = 5; // altura inicial y0=10%, debe leerse al iniciar si queremos que tenga alturas diferentes dependiendo del dispositivo
+	v = 0;
+	g = 1.622;
+	a = g;
+	dt = 0.016683;
+	gasolina=gasolinaTotal;
+	document.getElementById("fuel").innerHTML=porcentajeGasolina();
+	document.getElementById("fuel").style.color="black";
+}
 //OJO COMPORTAMIENTO ESCRITORIO
 function reiniciarJuego() {
 	stop();
@@ -272,6 +288,7 @@ function reiniciarJuego() {
 }
 
 function reanudar() {
+	stop();
 	start();
 	document.getElementById("reanudar").style.display="none";
 	document.getElementById("pausa").style.display="inline-block";
