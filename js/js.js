@@ -306,9 +306,6 @@ function pausarSmartphone() {
 	document.getElementById("reiniciaSmartphone").style.display="inline-block";
 	document.getElementById("ayudaSmartphone").style.display="inline-block";
 	document.getElementById("botonAjustesSmartphone").style.display="inline-block";
-	document.getElementById('izquierda').style.display="none";
-	document.getElementById('nave').style.display="none";
-	document.getElementById('zonaAterrizaje').style.display="none";
 	document.getElementById('derechaSmartphone').style.backgroundImage='url(img/fondo_menu.jpg)';
 	document.getElementById('derechaSmartphone').style.backgroundSize='auto';
 	document.getElementById('derechaSmartphone').style.backgroundRepeat='repeat';
