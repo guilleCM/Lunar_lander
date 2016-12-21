@@ -59,11 +59,17 @@
 }
 
 #reanudaSmartphone:active {border-style: inset;background-color: #2E8B57;}
+#reanudaSmartphone:hover {background-color: #2E8B57;} 
 #pausaSmartphone:active {border-style: inset;background-color: #2E8B57;font-size: 100%;}
+#pausaSmartphone:hover {background-color: #2E8B57;} 
 #reiniciaSmartphone:active {border-style: inset;background-color: #2E8B57;}
+#reiniciaSmartphone:hover {background-color: #2E8B57;} 
 #ayudaSmartphone:active {border-style: inset;background-color: #2E8B57;}
+#ayudaSmartphone:hover {background-color: #2E8B57;} 
 #botonAjustesSmartphone:active {border-style: inset;background-color: #2E8B57;}
+#botonAjustesSmartphone:hover {background-color: #2E8B57;}
 #close:active {border-style: inset;background-color: #2E8B57;}
+#close:hover {background-color: #2E8B57;} 
 #pausaSmartphone:hover {background-color: #2E8B57;font-size: 100%;}
 
 #reanudaSmartphone {
